@@ -49,6 +49,17 @@ button.navbar-toggler {
 color: gray;
 }
 
+.nav-links{
+    color: white;
+    font-size: 1.5em;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.nav-links:hover{
+    color: gray; 
+}
+
 .search-box {
     display: flex;
     align-items: center;
