@@ -13,26 +13,6 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../../resources/css/style_reseñas.css">
   <title>Reseñas</title>
-  <style>
-    .dropdown-submenu {
-      position: relative;
-    }
-
-    .dropdown-submenu .dropdown-menu {
-      top: 0;
-      left: 100%;
-      margin-top: -1px;
-    }
-  </style>
-  <script>
-    $(document).ready(function () {
-      $(".dropdown-submenu a.dropdown-toggle").on("click", function (e) {
-        $(this).next("ul").toggle();
-        e.stopPropagation();
-        e.preventDefault();
-      });
-    });
-  </script>
 </head>
 <body>
 
@@ -63,25 +43,25 @@
             </div>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../../views/admin/Inicio.html">Inicio</a>
+              <a class="nav-link" aria-current="page" href="../../views/admin/Inicio.html"><i class='bx bxs-home-alt-2' ></i> Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../../views/admin/Categorias.html">Categorías</a>
+              <a class="nav-link" aria-current="page" href="../../views/admin/Categorias.html"><i class='bx bxs-book-bookmark' ></i> Categorías</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" ria-current="page" href="../../views/admin/Productos.html">Productos</a>
+              <a class="nav-link" ria-current="page" href="../../views/admin/Productos.html"><i class='bx bxs-pie-chart-alt-2'></i> Productos</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" aria-current="page" href="../../views/admin/Pedidos.html">Pedidos</a>
+              <a class="nav-link" aria-current="page" href="../../views/admin/Pedidos.html"><i class='bx bxs-report'></i> Pedidos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../views/admin/Clientes.html">Clientes</a>
+              <a class="nav-link" href="../../views/admin/Clientes.html"><i class='bx bxs-user'></i> Clientes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../views/admin/Administrador.html">Administradores</a>
+              <a class="nav-link" href="../../views/admin/Administrador.html"><i class='bx bxs-user-plus' ></i> Administradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="../../views/admin/Reseñas.html">Reseñas</a>
+              <a class="nav-link active" href="../../views/admin/Reseñas.html"><i class='bx bxs-message-rounded-dots' ></i> Reseñas</a>
             </li>
           </ul>
         </div>
@@ -107,12 +87,16 @@
       <li class="dropdown-submenu">
         <a class="dropdown-item dropdown-toggle" href="#">Categorias</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Subcategoria 1</a></li>
-          <li><a class="dropdown-item" href="#">Subcategoria 2</a></li>
-          <li><a class="dropdown-item" href="#">Subcategoria 1</a></li>
-          <li><a class="dropdown-item" href="#">Subcategoria 2</a></li>
-          <li><a class="dropdown-item" href="#">Subcategoria 1</a></li>
-          <li><a class="dropdown-item" href="#">Subcategoria 2</a></li>
+          <li><a class="dropdown-item" href="#">Boligrafo</a></li>
+          <li><a class="dropdown-item" href="#">Marcadores</a></li>
+          <li><a class="dropdown-item" href="#">Saca puntas</a></li>
+          <li><a class="dropdown-item" href="#">Cuadernos</a></li>
+          <li><a class="dropdown-item" href="#">Libros de texto</a></li>
+          <li><a class="dropdown-item" href="#">Reglas</a></li>
+          <li><a class="dropdown-item" href="#">Carpetas</a></li>
+          <li><a class="dropdown-item" href="#">Compas</a></li>
+          <li><a class="dropdown-item" href="#">Blocs de notas</a></li>
+          <li><a class="dropdown-item" href="#">Papel adhesivo</a></li>       
           <!-- Agrega más subcampos según sea necesario -->
         </ul>
       </li>
@@ -147,6 +131,8 @@
     </tbody>
   </table>
 </div>
+
+<script src="../../resources/js/reseñas.js"></script>
 
 </body>
 </html>
