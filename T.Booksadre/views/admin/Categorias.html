@@ -1,74 +1,187 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Agrega las siguientes líneas para cargar Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="../../resources/css/style_inicio.css">
-  <title>Categorias</title>
-  <style>
 
-  </style>
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- Título del documento -->
+    <title>Categorias</title>
+
+    <!-- Metadatos de la página web -->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../resources/img/logo.png">
+
+    <!-- Llamada a las hojas de estilos del framework e iconos -->
+    
+    <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../resources/css/style_inicio.css">
 </head>
+
 <body>
 
-<div class="menu ">
-  <nav class="navbar bg-body-tertiary fixed-top ">
-    <div class="container-fluid ">
- 
-      <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Administrador</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <div class="circle-container">
-            <div class="circle">
-              <img src="https://editorial.uefa.com/resources/0250-0e9736e28005-0dd98a9ef3de-1000/cristiano_ronaldo_real_madrid_.jpeg" alt="Imagen en un círculo">
-            </div>
-
-          </div>          
-
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            
-            <div class="Editar">
-              <button> Editar perfil </button>
-            </div>
-
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../../views/admin/Inicio.html">Inicio</a>
-            
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../../views/admin/Categorias.html">Categorías</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" ria-current="page" href="../../views/admin/Productos.html">Productos</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" aria-current="page" href="../../views/admin/Pedidos.html">Pedidos</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="../../views/admin/Clientes.html">Clientes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../../views/admin/Administrador.html">Administradores</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../../views/admin/Reseñas.html">Reseñas</a>
-            </li>
-          </ul>
+  <div class="menu ">
+    <nav class="navbar bg-body-tertiary fixed-top ">
+      <div class="container-fluid ">
+   
+        <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Administrador</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="circle-container">
+              <div class="circle">
+                <img src="https://editorial.uefa.com/resources/0250-0e9736e28005-0dd98a9ef3de-1000/cristiano_ronaldo_real_madrid_.jpeg" alt="Imagen en un círculo">
+              </div>
+  
+            </div>          
+  
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              
+              <div class="Editar">
+                <button> Editar perfil </button>
+              </div>
+  
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../../views/admin/Inicio.html">Inicio</a>
+              
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../../views/admin/Categorias.html">Categorías</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" ria-current="page" href="../../views/admin/Productos.html">Productos</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" aria-current="page" href="../../views/admin/Pedidos.html">Pedidos</a>
+              </li>
+  
+             
+              <li class="nav-item">
+                <a class="nav-link" href="../../views/admin/Administrador.html">Administradores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../views/admin/Reseñas.html">Reseñas</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-</div>
+    </nav>
+  </div>
 
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+    <!-- Contenido principal del documento -->
+    <main>
+        <!-- Título del contenido principal -->
+        <h3 id="mainTitle"></h3>
+        <div class="row">
+            <!-- Formulario de búsqueda -->
+            <form class="col-sm-12 col-md-6" id="searchForm">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="search" class="form-control" name="search" placeholder="Buscar" required>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <button type="reset" class="btn btn-secondary" onclick="fillTable()">
+                            <i class="bi bi-x-square-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="col-sm-12 col-md-6 text-end">
+                <!-- Botón para abrir una caja de diálogo al momento de crear un nuevo registro -->
+                <button type="button" class="btn btn-primary" onclick="openCreate()">
+                    <i class="bi bi-plus-square-fill"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabla para mostrar los registros existentes -->
+        <table class="table table-hover">
+            <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
+            <thead>
+                <tr>
+                    <td colspan="4" id="rowsFound"></td>
+                </tr>
+                <tr>
+                    <th>IMAGEN</th>
+                    <th>NOMBRE</th>
+                    <th>DESCRIPCIÓN</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <!-- Componente Modal para guardar un registro -->
+        <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modalTitle"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!-- Formulario para guardar un registro -->
+                    <form id="saveForm">
+                        <div class="modal-body row g-3">
+                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                            <input type="hidden" id="idCategoria" name="idCategoria">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="form-label">Nombre</label>
+                                <input id="nombreCategoria" type="text" name="nombreCategoria" class="form-control"
+                                    required>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label for="descripcionCategoria" class="form-label">Descripción</label>
+                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                    class="form-control">
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label for="imagenCategoria" class="form-label">Imagen</label>
+                                <input id="imagenCategoria" type="file" name="imagenCategoria" class="form-control"
+                                    accept=".png, .jpg">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
+    <!-- Llamada al framework y librería de mensajes -->
+    <script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controllers/utils/components.js"></script>
+    <!-- Llamada al controlador del sitio privado -->
+    <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
+    <!-- Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controllers/admin/categoria.js"></script>
 </body>
+
 </html>
