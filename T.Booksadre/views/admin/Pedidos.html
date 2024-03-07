@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Agrega las siguientes líneas para cargar Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../../resources/css/style_inicio.css">
+  <title>Pedido</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+<div class="menu ">
+  <nav class="navbar bg-body-tertiary fixed-top ">
+    <div class="container-fluid ">
+ 
+      <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Administrador</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="circle-container">
+            <div class="circle">
+              <img src="https://editorial.uefa.com/resources/0250-0e9736e28005-0dd98a9ef3de-1000/cristiano_ronaldo_real_madrid_.jpeg" alt="Imagen en un círculo">
+            </div>
+
+          </div>          
+
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            
+            <div class="Editar">
+              <button> Editar perfil </button>
+            </div>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../../views/admin/Inicio.html">Inicio</a>
+            
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../../views/admin/Categorias.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" ria-current="page" href="../../views/admin/Productos.html">Productos</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" aria-current="page" href="../../views/admin/Pedidos.html">Pedidos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="../../views/admin/Clientes.html">Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../views/admin/Administrador.html">Administradores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../views/admin/Reseñas.html">Reseñas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<br><br><br><br><br><br><br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Clientes</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>20/02/2024</td>
+      <td>Cuscatancingo</td>
+      <td>No entregado</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jaco.b</td>
+      <td>23/12/2024</td>
+      <td>Mejicanos</td>
+      <td>Entregado</td>
+    </tr>
+
+    <tr>
+      <th scope="row">3</th>
+      <td>Maycol</td>
+      <td>20/09/2024</td>
+      <td>Zacamil</td>
+      <td>En curso</td>
+    </tr>
+
+    <tr>
+      <th scope="row">4</th>
+      <td>Alvaro</td>
+      <td>30/09/2024</td>
+      <td>Ricaldone</td>
+      <td>En curso</td>
+    </tr>
+
+  </tbody>
+</table>
+</body>
+</html>

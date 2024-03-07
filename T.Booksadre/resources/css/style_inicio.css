@@ -1,0 +1,79 @@
+body {
+    background-color: #babababa;
+}
+
+.menu {
+    text-align: left;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: #0D1B2A !important;
+}
+
+.navbar {
+    --bs-navbar-brand-color: rgb(255 255 255);
+}
+
+.navbar-brand {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 20%;
+    height: 20%;
+}
+
+.navbar-nav .nav-item {
+    margin-top: 10px;
+}
+
+.navbar-toggler-icon {
+    background-color: rgb(255, 255, 255);
+}
+
+button.navbar-toggler {
+    background-color: white;
+    margin-left: auto; /* Mueve el botón hacia la derecha */
+    
+}
+
+.img {
+    width: 90%;
+    height: 55%;
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 25%;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    background-color: #0D1B2A;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-item {
+    text-align: center;
+    align-items: flex-start;
+}
+
+.Editar{
+    text-align: center;
+    align-items: flex-start;
+    border-color: transparent;
+    border-radius: 0%;
+}
