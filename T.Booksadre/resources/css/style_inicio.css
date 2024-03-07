@@ -77,3 +77,39 @@ button.navbar-toggler {
     border-color: transparent;
     border-radius: 0%;
 }
+
+.table i {
+    font-size: 35px; /* Tamaño de los iconos */
+    color: #415A77; /* Color de los iconos */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los iconos */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
