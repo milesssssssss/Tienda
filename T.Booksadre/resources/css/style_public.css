@@ -39,35 +39,55 @@ button.navbar-toggler {
     margin-left: auto; /* Mueve el botón hacia la derecha */
     
 }
+.nav-link i{
+    color: white;
+    font-size: 1.0em;
+    transition: 0.3s;
+    font-size: 1.5em;
+}
+.nav-link:hover i{
+color: gray;
+}
 
 .search-box {
     display: flex;
     align-items: center;
 }
 
-.nav-link i {
-    color: white;
-    font-size: 1.5em;
-    transition: 0.3s;
-}
-
-.nav-link:hover i {
-    color: gray; 
-}
-
-
-.nav-links{
+.nav-link-text{
     color: white;
     font-size: 1.5em;
     transition: 0.3s;
     text-decoration: none;
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 723;
+    font-style: normal;
 }
 
-.nav-links:hover{
-    color: gray; 
+.nav-link-text:hover{
+   color: gray;
 }
 
+.textdescubre{
+    color: #373737;
+    font-size: 1.5em;
+    transition: 0.3s;
+    text-decoration: none;
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 723;
+    font-style: normal;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
 
+  
 
 
