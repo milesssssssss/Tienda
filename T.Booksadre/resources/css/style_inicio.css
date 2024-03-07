@@ -1,5 +1,5 @@
 body {
-    background-color: #babababa;
+    background-color: #FFFF;
 }
 
 .menu {
@@ -112,4 +112,9 @@ button.navbar-toggler {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+#piechart-container {
+  display: flex;
+  justify-content: center;
 }
