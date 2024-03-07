@@ -1,0 +1,125 @@
+body {
+    background-color: #babababa;
+}
+
+.menu {
+    text-align: left;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: #0D1B2A !important;
+}
+
+.navbar {
+    --bs-navbar-brand-color: rgb(255 255 255);
+}
+
+.navbar-brand {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 20%;
+    height: 20%;
+}
+
+.navbar-nav .nav-item {
+    margin-top: 10px;
+}
+
+.navbar-toggler-icon {
+    background-color: rgb(255, 255, 255);
+}
+
+button.navbar-toggler {
+    background-color: white;
+    margin-left: auto; /* Mueve el botón hacia la derecha */
+    
+}
+
+.img {
+    width: 90%;
+    height: 55%;
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 25%;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    background-color: #0D1B2A;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-item {
+    text-align: center;
+    align-items: flex-start;
+}
+
+.Editar{
+    text-align: center;
+    align-items: flex-start;
+    border-color: transparent;
+    border-radius: 0%;
+}
+
+
+.bg-custom-color{
+    background-color: #979797;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #757575;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+
+  
