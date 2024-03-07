@@ -78,7 +78,57 @@
 <div id="popup" class="popup">
   <div class="popup-content">
       <span class="close" onclick="closePopup()">&times;</span>
-      <p>Contenido de la ventana emergente</p>
+      <table class="table">
+          <thead>
+              <tr>
+                  <th scope="col">Productos</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Dirección</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Subtotal</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <th scope="row">1</th>
+                  <td>20/05/2024</td>
+                  <td>San Salvador</td>
+                  <td>En ruta</td>
+                  <td>20 unidades</td>
+                  <td>$30.00</td>
+                  <td>60.00</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>20/05/2024</td>
+                <td>San Salvador</td>
+                <td>En ruta</td>
+                <td>20 unidades</td>
+                <td>$30.00</td>
+                <td>60.00</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>20/05/2024</td>
+                <td>San Salvador</td>
+                <td>En ruta</td>
+                <td>20 unidades</td>
+                <td>$30.00</td>
+                <td>60.00</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>20/05/2024</td>
+                <td>San Salvador</td>
+                <td>En ruta</td>
+                <td>20 unidades</td>
+                <td>$30.00</td>
+                <td>60.00</td>
+            </tr>
+          </tbody>
+      </table>
   </div>
 </div>
 
@@ -130,6 +180,15 @@
 </table>
 
 
-<script src="../../resources/js/ventanapedidos.js"></script>
+<script>
+  function openPopup() {
+      document.getElementById("popup").style.display = "block";
+  }
+
+  function closePopup() {
+      document.getElementById("popup").style.display = "none";
+  }
+</script>
+
 </body>
 </html>
