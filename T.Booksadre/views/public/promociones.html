@@ -1,76 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--FONDOS DE LETRA-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,723;1,723&display=swap" rel="stylesheet">
+  <!-- Agrega las siguientes líneas para cargar Bootstrap -->
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
   <link rel="stylesheet" href="../../resources/css/style_public.css">
-  <link rel="stylesheet" href="../../resources/css/style_pros0.css">
-  <title>Reseñas</title>
-</head>
-<body>
-  <div class="menu">
-    <!-- Aquí va tu menú -->
-  </div>
-  <br>
-  <br>
-  <br>
-  <div class="container bg-custom-color d-flex justify-content-between align-items-center p-4">
-    <h2 class="text-center mx-auto" style="color: #434343;">Promociones</h2>
-    <h2 style="color: #979797;">........</h2>
-  </div>
-  <br>
-  <br>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <img src="../../resources/img/1.png" class="img-fluid" alt="..." style="max-width: 650px; max-height: 650px;">
+    <link rel="stylesheet" href="../../resources/css/style_pros0.css">
+    <title>Reseñas</title>
+  </head>
+  </head>
+  
+  <body>
+
+    <div class="menu">
+      <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+  
+          <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
+  
+  
+  
+          <!--Clase para centrar "Inicio y Catalogo"-->
+          <!-- Aquí agregamos el código del menú -->
+  
+          <ul class="nav nav-underline position-absolute top-50 start-50 translate-middle">
+            <li class="nav-item">
+              <a class="nav-link-text" href="../../views/public/Index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link-text" href="#">Catalogo</a>
+            </li>
+  
+          </ul>
+  
+  
+  
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <div class="search-box">
+                <input type="text" class="form-control" placeholder="Buscar">
+                <a class="nav-link" href="#" style="--i:1;"><i class='bx bx-search-alt-2'></i></a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="--i:2;"><i class='bx bxs-cart'></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="--i:3;"><i class='bx bx-info-circle'></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="--i:4;"><i class='bx bxs-user-circle'></i></a>
+            </li>
+  
+  
+          </ul>
+  
+        </div>
+      </nav>
+    </div>
+    <!--TERMINA-->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+    <div class="container bg-custom-color d-flex justify-content-between align-items-center p-4">
+        
+        <h2 class="text-center mx-auto" style="color: #434343;">Promociones</h2>
+        <h2 style="color: #979797;">........</h2>
+
       </div>
-      <div class="col-lg-6">
-        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
-          <div class="bg-white p-3" style="width: 200px;">
-            <p class="text-center">Hola</p>
+
+      <script src="../../resources/js/reseñas.js"></script>
+
+    </div>
+    <br>
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="../../resources/img/1.png" class="img-fluid" alt="..." style="max-width: 650px; max-height: 650px;">
+        </div>
+        <div class="col-lg-6">
+          <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <div class="bg-white p-3 text-center" style="width: 600px;">
+              <p class="text-center">Vigencia:</p>
+              <p class="text-center">Desde: Miércoles 14 de Febrero de 2024</p>
+              <p class="text-center">Hasta: Viernes 16 de Febrero de 2024</p>
+              <p class="text-center">Promoción válida en booksadre.com.sv</p>
+              <button class="btn btn-primary mt-3">Ver productos</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    
+  
+
   <br>
   <br>
+
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
         <img src="../../resources/img/2.png" class="img-fluid" alt="..." style="max-width: 650px; max-height: 650px;">
       </div>
       <div class="col-lg-6">
-        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
-          <div class="bg-white p-3" style="width: 200px;">
-            <p class="text-center">Hola</p>
+        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+          <div class="bg-white p-3 text-center" style="width: 600px;">
+            <p class="text-center">Vigencia:</p>
+            <p class="text-center">Desde:Martes 06 de Febrero de 2024</p>
+            <p class="text-center">Hasta:Lunes 19 de Febrero de 2024</p>
+            <p class="text-center">Promoción válida en booksadre.com.sv</p>
+            <button class="btn btn-primary mt-3">Ver productos</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
   <br>
   <br>
+
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
         <img src="../../resources/img/3.png" class="img-fluid" alt="..." style="max-width: 650px; max-height: 650px;">
       </div>
       <div class="col-lg-6">
-        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
-          <div class="bg-white p-3" style="width: 200px;">
-            <p class="text-center">Hola</p>
+        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+          <div class="bg-white p-3 text-center" style="width: 600px;">
+            <p class="text-center">Vigencia:</p>
+            <p class="text-center">Desde:Martes 06 de Febrero de 2024</p>
+            <p class="text-center">Hasta:Lunes 19 de Febrero de 2024</p>
+            <p class="text-center">Promoción válida en booksadre.com.sv</p>
+            <button class="btn btn-primary mt-3">Ver productos</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </body>
 </html>
