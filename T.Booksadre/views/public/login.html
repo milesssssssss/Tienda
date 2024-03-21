@@ -31,41 +31,47 @@
 </head>
 
 <body>
-    <!-- Menú -->
-    <div class="menu">
-        <nav class="navbar bg-body-tertiary fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
+<!-- Menú de navegación -->
+<div class="menu">
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
 
-                <ul class="nav nav-underline position-absolute top-50 start-50 translate-middle">
-                    <li class="nav-item">
-                        <a class="nav-link-text" href="../../views/public/Index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-text" href="#">Catálogo</a>
-                    </li>
-                </ul>
+            <!-- Menú principal -->
+            <ul class="nav nav-underline position-absolute top-50 start-50 translate-middle">
+                <li class="nav-item">
+                    <a class="nav-link-text" href="../../views/public/Index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-text" href="#">Catálogo</a>
+                </li>
+            </ul>
 
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <div class="search-box">
-                            <input type="text" class="form-control" placeholder="Buscar">
-                            <a class="nav-link" href="#" style="--i:1;"><i class='bx bx-search-alt-2'></i></a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="--i:2;"><i class='bx bxs-cart'></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="--i:3;"><i class='bx bx-info-circle'></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="--i:4;"><i class='bx bxs-user-circle'></i></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+            <!-- Iconos y caja de búsqueda -->
+            <ul class="nav justify-content-center">
+                <!-- Caja de búsqueda -->
+                <li class="nav-item">
+                    <div class="search-box">
+                        <input type="text" class="form-control" placeholder="Buscar">
+                        <a class="nav-link" href="#" style="--i:1;"><i class='bx bx-search-alt-2'></i></a>
+                    </div>
+                </li>
+                <!-- Iconos adicionales -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="--i:2;"><i class='bx bxs-cart'></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="--i:3;"><i class='bx bx-info-circle'></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html" style="--i:4;"><i class='bx bxs-user-circle'></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
 
     <div class="container-xl"> <!-- Cambio realizado aquí -->
         <form class="login-form" action="../../views/public/index.html">
