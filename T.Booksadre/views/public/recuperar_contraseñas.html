@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesión</title>
+    <title>Recuperar contraseña</title>
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,9 +25,9 @@
     <link rel="stylesheet" href="../../resources/css/style_public.css">
     <link rel="stylesheet" href="../../resources/css/style_pros0.css">
 
-    <!-- Java script -->
-    <script type="text/javascript" src="../../resources/js/login_publico.js"></script>
-    
+     <!-- Java script -->
+     <script type="text/javascript" src="../../resources/js/recuperar_contraseña.js"></script>
+
 </head>
 
 <body>
@@ -77,10 +77,9 @@
         <form class="login-form" action="../../views/public/index.html">
 
             <img src="../../resources/img/logo_gris.png" class="img-fluid" alt="...">
-            <h2 class="text-center">Iniciar sesión</h2>
+            <h2 class="text-center">Olvide mi contraseña</h2>
             <br>
-            <p class="text-center">Si ya posees una cuenta, por favor ingresa tu dirección de correo electrónico y
-                clave a continuación.</p>
+            <p class="text-center">Por motivos de seguridad, tu clave será enviada a tu correo electrónico. Para esto es necesario que ingreses la dirección de correo electrónico utilizada al momento de registrarte en www.booksadre.com.sv</p>
             <br>
             <div class="form-group">
                 <label for="username" style="position: relative;">
@@ -89,28 +88,8 @@
                     <input type="text" id="username" name="username" required style="padding-left: 30px;"
                         placeholder=" Correo Electrónico">
                 </label>
-            </div>
-            <div class="form-group">
-                <label for="password" style="position: relative;">
-                    <i class='bx bxs-lock'
-                        style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
-                    <input type="password" id="password" name="password" required style="padding-left: 30px;"
-                        placeholder=" Contraseña">
-                </label>
-            </div>
             <br>
-            <button type="submit">Iniciar sesión</button>
-            <br>
-            <br>
-            <a class="text-center" href="../../views/public/recuperar_contraseñas.html">¿Olvidastes tu contraseña?</a>
-            <br>
-            <br>
-            <br>
-            <br>
-            <a>¿Aún no tienes cuenta?</a>
-            <br>
-            <br>
-            <button type="button" onclick="redirectToRegistro()">Registrarse</button>
+            <button type="submit">Enviar Contraseña</button>
             <br>
             <br>
             <button type="button" onclick="regresar()"><i class='bx bx-arrow-back' style="color: white;"></i> Regresar</button>
