@@ -208,7 +208,7 @@ footer {
 
 .login-form {
     /* Tu estilo actual */
-    width: 500px;
+    width: 400px;
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 5px;
@@ -217,7 +217,6 @@ footer {
     top: 80%; /* Ajusta esta posición según sea necesario */
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;;
     text-align: center; /* Centro los elementos del formulario */
 }
 .form-group {
