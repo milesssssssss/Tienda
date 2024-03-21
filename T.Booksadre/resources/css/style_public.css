@@ -240,9 +240,27 @@ button {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    width: 300px;
+    width: 200px;
     
 }
 button:hover {
     background-color: #0056b3;
+}
+
+
+/* Registro publico */
+
+
+.login-forms {
+    /* Tu estilo actual */
+    width: 500px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #B4B3B3;
+    position: absolute;
+    top: 80%; /* Ajusta esta posición según sea necesario */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* Centro los elementos del formulario */
 }
