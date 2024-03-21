@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #babababa;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.cart {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.price {
+    color: #007bff;
+    font-size: 18px;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+.total {
+    text-align: right
+}
+
+
+
+
+
+
+
+
+
+.menu {
+    text-align: left;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: #0D1B2A !important;
+}
+
+.navbar {
+    --bs-navbar-brand-color: rgb(255 255 255);
+}
+
+.navbar-brand {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 20%;
+    height: 20%;
+}
+
+.navbar-nav .nav-item {
+    margin-top: 10px;
+}
+
+.navbar-toggler-icon {
+    background-color: rgb(255, 255, 255);
+}
+
+button.navbar-toggler {
+    background-color: white;
+    margin-left: auto; /* Mueve el botón hacia la derecha */
+    
+}
+.nav-link i{
+    color: white;
+    font-size: 1.0em;
+    transition: 0.3s;
+    font-size: 1.5em;
+}
+.nav-link:hover i{
+color: gray;
+}
+
+.nav-links{
+    color: white;
+    font-size: 1.5em;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.nav-links:hover{
+    color: gray; 
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link-text{
+    color: white;
+    font-size: 1.5em;
+    transition: 0.3s;
+    text-decoration: none;
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 723;
+    font-style: normal;
+}
+
+.nav-link-text:hover{
+   color: gray;
+}
+
+.textdescubre{
+    color: #373737;
+    font-size: 1.5em;
+    transition: 0.3s;
+    text-decoration: none;
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 723;
+    font-style: normal;
+    text-align: center;
+}
