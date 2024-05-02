@@ -79,7 +79,16 @@ const loadTemplate = async () => {
           <li class="nav-item">
             <a class="nav-link" href="../../views/admin/valoracion.html"><i class='bx bxs-message-rounded-dots' ></i> Reseñas</a>
           </li>
+
         </ul>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Cuenta: <b>${DATA.username}</b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="profile.html">Editar perfil</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="#" onclick="logOut()">Cerrar sesión</a></li>
+                                        </ul>
+                                    </li>
       </div>
     </div>
   </div>
