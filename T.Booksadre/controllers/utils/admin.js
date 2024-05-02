@@ -61,13 +61,13 @@ const loadTemplate = async () => {
                             <a class="nav-link" aria-current="page" href="../../views/admin/Inicio.html"><i class='bx bxs-home-alt-2' ></i> Inicio</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../views/admin/Categorias.html"><i class='bx bxs-book-bookmark' ></i> Categorías</a>
+                            <a class="nav-link" aria-current="page" href="../../views/admin/Categorias.html"><i class='bx bxs-book-bookmark' ></i> Categorías</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" ria-current="page" href="../../views/admin/Productos.html"><i class='bx bxs-pie-chart-alt-2'></i> Productos</a>
                           </li>
                           <li class="nav-item ">
-                            <a class="nav-link" aria-current="page" href="../../views/admin/Pedidos.html"><i class='bx bxs-report'></i> Pedidos</a>
+                            <a class="nav-link active" aria-current="page" href="../../views/admin/Pedidos.html"><i class='bx bxs-report'></i> Pedidos</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="../../views/admin/Clientes.html"><i class='bx bxs-user'></i> Clientes</a>
@@ -78,12 +78,22 @@ const loadTemplate = async () => {
                           <li class="nav-item">
                             <a class="nav-link" href="../../views/admin/valoracion.html"><i class='bx bxs-message-rounded-dots' ></i> Reseñas</a>
                           </li>
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Cuenta: <b>${DATA.username}</b></a>
+                              <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="profile.html">Editar perfil</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#" onclick="logOut()">Cerrar sesión</a></li>
+                              </ul>
+                          </li>
                         </ul>
                       </div>
                     </div>
                   </div>
                 </nav>
               </div>
+              
+              
                 </header>
             `);
         
