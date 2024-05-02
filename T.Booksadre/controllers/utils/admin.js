@@ -30,56 +30,64 @@ const loadTemplate = async () => {
             // Se agrega el encabezado de la página web antes del contenido principal.
             MAIN.insertAdjacentHTML('beforebegin', `
                 <header>
-                    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-                        <div class="container">
-                            <a class="navbar-brand" href="dashboard.html">
-                                <img src="../../resources/img/logo.png" alt="CoffeeShop" width="50">
-                            </a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarContent">
-                                <ul class="navbar-nav ms-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="producto.html">Productos</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="categoria.html">Categorías</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="administrador.html">Administradores</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Cuenta: <b>${DATA.username}</b></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="profile.html">Editar perfil</a></li>
-                                            <li><hr class="dropdown-divider"></li>
-                                            <li><a class="dropdown-item" href="#" onclick="logOut()">Cerrar sesión</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
+                   
+<div class="menu ">
+<nav class="navbar bg-body-tertiary fixed-top ">
+  <div class="container-fluid ">
+
+    <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Administrador</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="circle-container">
+          <div class="circle">
+            <img src="https://editorial.uefa.com/resources/0250-0e9736e28005-0dd98a9ef3de-1000/cristiano_ronaldo_real_madrid_.jpeg" alt="Imagen en un círculo">
+          </div>
+
+        </div>          
+
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          
+          <div class="Editar">
+            <button> Editar perfil </button>
+          </div>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../../views/admin/Inicio.html"><i class='bx bxs-home-alt-2' ></i> Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../../views/admin/Categorias.html"><i class='bx bxs-book-bookmark' ></i> Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ria-current="page" href="../../views/admin/Productos.html"><i class='bx bxs-pie-chart-alt-2'></i> Productos</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" aria-current="page" href="../../views/admin/Pedidos.html"><i class='bx bxs-report'></i> Pedidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../../views/admin/Clientes.html"><i class='bx bxs-user'></i> Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../views/admin/Administrador.html"><i class='bx bxs-user-plus' ></i> Administradores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../views/admin/valoracion.html"><i class='bx bxs-message-rounded-dots' ></i> Reseñas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+</div>
                 </header>
             `);
-            // Se agrega el pie de la página web después del contenido principal.
-            MAIN.insertAdjacentHTML('afterend', `
-                <footer>
-                    <nav class="navbar fixed-bottom bg-body-tertiary">
-                        <div class="container">
-                            <div>
-                                <p><a class="nav-link" href="https://github.com/milesssssssss/Tienda" target="_blank"><i class="bi bi-github"></i> booksadre</a></p>
-                                <p><i class="bi bi-c-square-fill"></i> 2018-2024 Todos los derechos reservados</p>
-                            </div>
-                            <div>
-                                <p><a class="nav-link" href="../public/" target="_blank"><i class="bi bi-cart-fill"></i> Sitio público</a></p>
-                                <p><i class="bi bi-envelope-fill"></i> dacasoft@outlook.com</p>
-                            </div>
-                        </div>
-                    </nav>
-                </footer>
-            `);
+      
         } else {
             sweetAlert(3, DATA.error, false, 'index.html');
         }

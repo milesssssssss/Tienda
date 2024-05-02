@@ -1,21 +1,28 @@
 <!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+    <!-- Título del documento -->
+    <title></title>
+    <!-- Metadatos de la página web -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- Llamada al icono de la página web -->
     <link type="image/png" rel="icon" href="../../resources/img/logo.png">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Inicio de Sesión - Librería</title>
-    <link rel="stylesheet" href="../../resources/css/style_inicio_sesion.css">
+    <!-- Llamada a las hojas de estilos del framework e iconos -->
+    <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-icons.min.css">
+    
 </head>
 
 <body>
-      <!-- Contenido principal del documento -->
-      <main>
+    <!-- Contenido principal del documento -->
+    <main>
         <!-- Título del contenido principal -->
         <h3 id="mainTitle"></h3>
-
+        <img src="../../resources/img/user.png" class="mx-auto d-block" width="200">
         <!-- Formulario para iniciar sesión -->
         <form class="d-none" id="loginForm">
             <div class="row g-3">
@@ -32,7 +39,7 @@
                 </div>
             </div>
         </form>
-       <!-- Formulario para crear el primer administrador -->
+        <!-- Formulario para crear el primer administrador -->
         <form class="d-none" id="signupForm">
             <div class="row g-3">
                 <div class="col-sm-12 col-md-6">
@@ -51,7 +58,7 @@
                         required>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <label for= "aliasAdministrador" class="form-label">Alias</label>
+                    <label for="aliasAdministrador" class="form-label">Alias</label>
                     <input id="aliasAdministrador" type="text" name="aliasAdministrador" class="form-control" required>
                 </div>
                 <div class="col-sm-12 col-md-6">
@@ -81,6 +88,5 @@
     <!-- Llamada al controlador de la página web -->
     <script type="text/javascript" src="../../controllers/admin/index.js"></script>
 </body>
-
 
 </html>
