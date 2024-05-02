@@ -11,7 +11,7 @@ MAIN.style.paddingTop = '75px';
 MAIN.style.paddingBottom = '100px';
 MAIN.classList.add('container');
 // Se establece el título de la página web.
-document.querySelector('title').textContent = 'CoffeeShop - Dashboard';
+document.querySelector('title').textContent = 'booksadre - Dashboard';
 // Constante para establecer el elemento del título principal.
 const MAIN_TITLE = document.getElementById('mainTitle');
 MAIN_TITLE.classList.add('text-center', 'py-3');
@@ -69,7 +69,7 @@ const loadTemplate = async () => {
                     <nav class="navbar fixed-bottom bg-body-tertiary">
                         <div class="container">
                             <div>
-                                <p><a class="nav-link" href="https://github.com/dacasoft/coffeeshop" target="_blank"><i class="bi bi-github"></i> CoffeeShop</a></p>
+                                <p><a class="nav-link" href="https://github.com/milesssssssss/Tienda" target="_blank"><i class="bi bi-github"></i> booksadre</a></p>
                                 <p><i class="bi bi-c-square-fill"></i> 2018-2024 Todos los derechos reservados</p>
                             </div>
                             <div>
@@ -103,7 +103,7 @@ const loadTemplate = async () => {
                 <footer>
                     <nav class="navbar fixed-bottom bg-body-tertiary">
                         <div class="container">
-                            <p><a class="nav-link" href="https://github.com/dacasoft/coffeeshop" target="_blank"><i class="bi bi-github"></i> CoffeeShop</a></p>
+                            <p><a class="nav-link" href="https://github.com/milesssssssss/Tienda" target="_blank"><i class="bi bi-github"></i> booksadre</a></p>
                             <p><i class="bi bi-envelope-fill"></i> dacasoft@outlook.com</p>
                         </div>
                     </nav>
