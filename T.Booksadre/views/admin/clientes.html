@@ -49,6 +49,8 @@
       </div>
   </div>
 
+  <br>
+
   <!-- Tabla para mostrar los registros existentes -->
   <table class="table table-hover">
       <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
@@ -57,11 +59,14 @@
               <td colspan="5" id="rowsFound"></td>
           </tr>
           <tr>
-              <th>PEDIDO</th>
-              <th>CLIENTE</th>
+              <th>NOMBRE</th>
+              <th>APELLIDO</th>
+              <th>DUI</th>
+              <th>CORREO</th>
+              <th>TELEFONO</th>
               <th>DIRECCION</th>
               <th>ESTADO</th>
-              <th>FECHA</th>
+              <th>FECHA REGISTRO</th>
           </tr>
       </thead>
       <!-- Cuerpo de la tabla para mostrar un registro por fila -->
@@ -83,36 +88,52 @@
                       <!-- Campo oculto para asignar el id del registro al momento de modificar -->
                       <input type="hidden" id="idAdministrador" name="idAdministrador">
                       <div class="col-sm-12 col-md-6">
-                          <label for="nombreAdministrador" class="form-label">PEDIDO</label>
-                          <input id="nombreAdministrador" type="text" name="nombreAdministrador"
+                          <label for="nombreCliente" class="form-label">NOMBRE</label>
+                          <input id="nombreCliente" type="text" name="nombreCliente"
                               class="form-control" required>
                       </div>
                       <div class="col-sm-12 col-md-6">
-                          <label for="apellidoAdministrador" class="form-label">CLIENTE</label>
-                          <input id="apellidoAdministrador" type="text" name="apellidoAdministrador"
+                          <label for="apellidoCliente" class="form-label">APELLIDO</label>
+                          <input id="apellidoCliente" type="text" name="apellidoCliente"
                               class="form-control" required>
                       </div>
                       <div class="col-sm-12 col-md-6">
-                          <label for="correoAdministrador" class="form-label">DIRECCION</label>
-                          <input id="correoAdministrador" type="email" name="correoAdministrador"
+                          <label for="duiCliente" class="form-label">DUI</label>
+                          <input id="duiCliente" type="text" name="duiCliente"
                               class="form-control" required>
                       </div>
                       <div class="col-sm-12 col-md-6">
-                          <label for="claveAdministrador" class="form-label">FECHA</label>
-                          <input id="claveAdministrador" type="password" name="claveAdministrador"
+                          <label for="correoCliente" class="form-label">CORREO</label>
+                          <input id="correoCliente" type="email" name="correoCliente"
                               class="form-control" required>
                       </div>
-                      <div class="form-check form-switch form-check-reverse">
-                        <input class="form-check-input" type="checkbox" id="estadoProducto"
-                            name="estadoProducto" checked>
-                        <label class="form-check-label" for="estadoProducto">Estado</label>
-                    </div>
+                      <div class="col-sm-12 col-md-6">
+                          <label for="telefonoCliente" class="form-label">TELEFONO</label>
+                          <input id="telefonoCliente" type="text" name="telefonoCliente"
+                              class="form-control" required>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <label for="direccionCliente" class="form-label">DIRECCION</label>
+                        <input id="direccionCliente" type="text" name="direccionCliente"
+                            class="form-control" required>
+                      </div> 
+                      <div class="col-sm-12 col-md-6">
+                        <label for="estadoCliente" class="form-label">ESTADO</label>
+                        <input id="estadoCliente" type="text" name="estadoCliente"
+                            class="form-control" required>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <label for="fechaCliente" class="form-label">FECHA DE REGISTRO</label>
+                        <input id="fechaCliente" type="text" name="fechaCliente"
+                            class="form-control" required>
+                      </div>
                   </div>
-                  <div class="modal-footer">
-                      <button type="submit" class="btn btn-primary">Guardar</button>
-                  </div>
-              </form>
-          </div>
+
+               <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
+            </form>
+        </div>
       </div>
   </div>
 </main>
@@ -126,6 +147,6 @@
 <!-- Llamada al controlador del sitio privado -->
 <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
     <!-- Llamada al controlador de la página web -->
-    <script type="text/javascript" src="../../controllers/admin/pedido.js"></script>
+    <script type="text/javascript" src="../../controllers/admin/cliente.js"></script>
 </body>
 </html>
