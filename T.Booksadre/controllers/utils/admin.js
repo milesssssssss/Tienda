@@ -121,7 +121,7 @@ const loadTemplate = async () => {
                     <nav class="navbar fixed-bottom bg-body-tertiary">
                         <div class="container">
                             <p><a class="nav-link" href="https://github.com/milesssssssss/Tienda" target="_blank"><i class="bi bi-github"></i> booksadre</a></p>
-                            <p><i class="bi bi-envelope-fill"></i> dacasoft@outlook.com</p>
+                            <p><i class="bi bi-envelope-fill"></i> booksadre23@gmail.com</p>
                         </div>
                     </nav>
                 </footer>
