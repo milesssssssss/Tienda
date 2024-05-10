@@ -1,3 +1,6 @@
+Para permitir que el administrador pueda borrar y publicar comentarios, podemos agregar botones de acción en cada fila de la tabla. Aquí tienes una versión modificada del código HTML que incluye botones para eliminar y publicar comentarios:
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -109,7 +112,9 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Buenos días administrador</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close
+
+"></button>
   </div>
 
 </div>
@@ -123,10 +128,21 @@
         <th scope="col">Calificación</th>
         <th scope="col">Fecha</th>
         <th scope="col">Usuario</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
-      
+      <tr>
+        <td><img src="https://example.com/product_image.jpg" alt="Producto"></td>
+        <td>Bolígrafo de Gel Premium</td>
+        <td>⭐️⭐️⭐️⭐️⭐️</td>
+        <td>10 de mayo de 2024</td>
+        <td>María_García</td>
+        <td>
+          <button class="btn btn-danger">Eliminar</button>
+          <button class="btn btn-primary">Publicar</button>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
