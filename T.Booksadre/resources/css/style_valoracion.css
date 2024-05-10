@@ -152,3 +152,11 @@ button.navbar-toggler {
     left: 100%;
     margin-top: -1px;
 }
+
+/* Estilos para la imagen circular */
+.table img.circular-image {
+  border-radius: 50%;
+  width: 50px; /* Ajusta el tamaño de la imagen según lo necesites */
+  height: 50px; /* Ajusta el tamaño de la imagen según lo necesites */
+  object-fit: cover; /* Ajusta el tamaño y recorta la imagen para que se ajuste al contenedor */
+}
