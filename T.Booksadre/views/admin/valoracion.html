@@ -1,4 +1,4 @@
-Para mostrar una advertencia cuando se publica o elimina un comentario, podemos agregar un elemento de alerta en la parte superior de la página que se mostrará temporalmente después de que se realice la acción. Aquí tienes una versión actualizada del código HTML que incluye estas advertencias:
+Claro, podemos utilizar una ventana modal emergente para mostrar la advertencia de que se ha realizado una acción. Aquí tienes una versión actualizada del código que utiliza una ventana modal para mostrar la advertencia:
 
 ```html
 <!DOCTYPE html>
@@ -81,8 +81,6 @@ Para mostrar una advertencia cuando se publica o elimina un comentario, podemos 
 
 <div class="container bg-custom-color d-flex justify-content-between align-items-center p-4">
   <div class="dropdown">
-
-
     <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class='bx bx-menu'></i>
     </button>
@@ -111,10 +109,24 @@ Para mostrar una advertencia cuando se publica o elimina un comentario, podemos 
   <h2 style="color: #979797;">........</h2>
 </div>
 
-<!-- Alerta de acción -->
-<div class="alert alert-success alert-dismissible fade show" role="alert" id="alerta-accion" style="display: none;">
-  La acción se ha realizado exitosamente.
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<!-- Ventana modal de advertencia -->
+<div class="modal fade" id="modal-advertencia" tabindex="-1" aria-labelledby="modal-advertencia-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-advertencia-label">Advertencia</h5>
+        <button
+
+ type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        La acción se ha realizado exitosamente.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -139,38 +151,19 @@ Para mostrar una advertencia cuando se publica o elimina un comentario, podemos 
     </thead>
     <tbody>
       <tr>
-        <td><img src="https://example.com/product_image.jpg" alt="Producto"></td>
+        <td><img src="../../resources/img/Booksadre.png" alt="Producto"></td>
         <td>Bolígrafo de Gel Premium</td>
         <td>⭐️⭐️⭐️⭐️⭐️</td>
         <td>10 de mayo de 2024</td>
         <td>María_García</td>
         <td>
-          <button class="btn btn-danger">Eliminar</button>
-          <button class="btn btn-primary">Publicar</button>
+          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-advertencia">Eliminar</button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-advertencia">Publicar</button>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
-
-<script>
-  // Función para mostrar la alerta
-  function mostrarAlerta() {
-    $('#alerta-accion').fadeIn().delay(2000).fadeOut();
-  }
-  
-  // Simular la acción de eliminar un comentario
-  $('.btn-danger').click(function() {
-    mostrarAlerta();
-    // Agregar aquí la lógica para eliminar el comentario
-  });
-  
-  // Simular la acción de publicar un comentario
-  $('.btn-primary').click(function() {
-    mostrarAlerta();
-    // Agregar aquí la lógica para publicar el comentario
-  });
-</script>
 
 </body>
 </html>
