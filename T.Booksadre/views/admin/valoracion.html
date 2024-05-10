@@ -1,4 +1,4 @@
-Para permitir que el administrador pueda borrar y publicar comentarios, podemos agregar botones de acción en cada fila de la tabla. Aquí tienes una versión modificada del código HTML que incluye botones para eliminar y publicar comentarios:
+Para mostrar una advertencia cuando se publica o elimina un comentario, podemos agregar un elemento de alerta en la parte superior de la página que se mostrará temporalmente después de que se realice la acción. Aquí tienes una versión actualizada del código HTML que incluye estas advertencias:
 
 ```html
 <!DOCTYPE html>
@@ -81,6 +81,8 @@ Para permitir que el administrador pueda borrar y publicar comentarios, podemos 
 
 <div class="container bg-custom-color d-flex justify-content-between align-items-center p-4">
   <div class="dropdown">
+
+
     <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class='bx bx-menu'></i>
     </button>
@@ -109,12 +111,16 @@ Para permitir que el administrador pueda borrar y publicar comentarios, podemos 
   <h2 style="color: #979797;">........</h2>
 </div>
 
+<!-- Alerta de acción -->
+<div class="alert alert-success alert-dismissible fade show" role="alert" id="alerta-accion" style="display: none;">
+  La acción se ha realizado exitosamente.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Buenos días administrador</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close
-
-"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
 
 </div>
@@ -147,7 +153,24 @@ Para permitir que el administrador pueda borrar y publicar comentarios, podemos 
   </table>
 </div>
 
-<script src="../../resources/js/reseñas.js"></script>
+<script>
+  // Función para mostrar la alerta
+  function mostrarAlerta() {
+    $('#alerta-accion').fadeIn().delay(2000).fadeOut();
+  }
+  
+  // Simular la acción de eliminar un comentario
+  $('.btn-danger').click(function() {
+    mostrarAlerta();
+    // Agregar aquí la lógica para eliminar el comentario
+  });
+  
+  // Simular la acción de publicar un comentario
+  $('.btn-primary').click(function() {
+    mostrarAlerta();
+    // Agregar aquí la lógica para publicar el comentario
+  });
+</script>
 
 </body>
 </html>
