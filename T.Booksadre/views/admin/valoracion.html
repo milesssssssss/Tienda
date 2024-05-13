@@ -1,165 +1,114 @@
 <!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Agrega las siguientes líneas para cargar Bootstrap y jQuery -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <link type="image/png" rel="icon" href="../../resources/img/icon.png">
-  <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap.min.css">
-  <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-icons.min.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="../../resources/css/style_valoracion.css">
 
-  <title>Reseñas</title>
+<head>
+    <!-- Título del documento -->
+    <title></title>
+    <!-- Metadatos de la página web -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../resources/img/logo.png">
+    <!-- Llamada a las hojas de estilos del framework e iconos -->
+    <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../resources/css/style_inicio.css">
+</head>
+
 </head>
 <body>
-
-<div class="menu ">
-  <nav class="navbar bg-body-tertiary fixed-top ">
-    <div class="container-fluid ">
- 
-      <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Administrador</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <div class="circle-container">
-            <div class="circle">
-              <img src="https://editorial.uefa.com/resources/0250-0e9736e28005-0dd98a9ef3de-1000/cristiano_ronaldo_real_madrid_.jpeg" alt="Imagen en un círculo">
-            </div>
-          </div>          
-
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            
-            <div class="Editar">
-              <button> Editar perfil </button>
-            </div>
-
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../../views/admin/Inicio.html"><i class='bx bxs-home-alt-2' ></i> Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../../views/admin/Categorias.html"><i class='bx bxs-book-bookmark' ></i> Categorías</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" ria-current="page" href="../../views/admin/Productos.html"><i class='bx bxs-pie-chart-alt-2'></i> Productos</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" aria-current="page" href="../../views/admin/Pedidos.html"><i class='bx bxs-report'></i> Pedidos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../../views/admin/Clientes.html"><i class='bx bxs-user'></i> Clientes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../../views/admin/Administrador.html"><i class='bx bxs-user-plus' ></i> Administradores</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="../../views/admin/valoracion.html"><i class='bx bxs-message-rounded-dots' ></i> Reseñas</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
+  <br>
+   <!-- Contenido principal del documento -->
+ <main>
+  <!-- Título del contenido principal -->
+  <h3 id="mainTitle"></h3>
 <br>
 
-<div class="container bg-custom-color d-flex justify-content-between align-items-center p-4">
-  <div class="dropdown">
-    <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class='bx bx-menu'></i>
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item disabled" href="#">Buenos días administrador <i class='bx bxs-hand'></i></a></li>
-      <li><a class="dropdown-item" href="#">Reseñas recientes</a></li>
-      <li class="dropdown-submenu">
-        <a class="dropdown-item dropdown-toggle" href="#">Categorias</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Boligrafo</a></li>
-          <li><a class="dropdown-item" href="#">Marcadores</a></li>
-          <li><a class="dropdown-item" href="#">Saca puntas</a></li>
-          <li><a class="dropdown-item" href="#">Cuadernos</a></li>
-          <li><a class="dropdown-item" href="#">Libros de texto</a></li>
-          <li><a class="dropdown-item" href="#">Reglas</a></li>
-          <li><a class="dropdown-item" href="#">Carpetas</a></li>
-          <li><a class="dropdown-item" href="#">Compas</a></li>
-          <li><a class="dropdown-item" href="#">Blocs de notas</a></li>
-          <li><a class="dropdown-item" href="#">Papel adhesivo</a></li>       
-        </ul>
-      </li>
-    </ul>
-  </div>
-  
-  <h2 class="text-center mx-auto" style="color: #434343;">Productos</h2>
-  <h2 style="color: #979797;">........</h2>
-</div>
-
-<!-- Ventana modal de advertencia -->
-<div class="modal fade" id="modal-advertencia" tabindex="-1" aria-labelledby="modal-advertencia-label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modal-advertencia-label">Advertencia</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        La acción se ha realizado exitosamente.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Buenos días administrador</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-
-</div>
-
-<div class="container mt-5">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Imagen</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Calificación</th>
-        <th scope="col">Fecha</th>
-        <th scope="col">Usuario</th>
-        <th scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><img src="../../resources/img/lapiz.png" alt="Producto" class="circular-image"></td>
-        <td>Bolígrafo de Gel Premium</td>
-        <td>⭐️⭐️⭐️⭐️⭐️</td>
-        <td>10 de mayo de 2024</td>
-        <td>María_García</td>
-        <td>
-          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-advertencia">Eliminar</button>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-advertencia">Publicar</button>
-        </td>
-      </tr>
-    </tbody>
+  <!-- Tabla para mostrar los registros existentes -->
+  <table class="table table-hover">
+      <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
+      <thead>
+          <tr>
+              <td colspan="6" id="rowsFound"></td>
+          </tr>
+          <tr>
+              <th>IMAGEN</th>
+              <th>NOMBRE</th>
+              <th>CALIFICACION</th>
+              <th>FECHA</th>
+              <th>USUARIO</th>
+              <th>ESTADO</th>
+          </tr>
+      </thead>
+      <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+      <tbody id="tableBody"></tbody>
   </table>
-</div>
 
+  <!-- Componente Modal para guardar un registro -->
+  <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="modalTitle"></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <!-- Formulario para guardar un registro -->
+              <form id="saveForm">
+                  <div class="modal-body row g-3">
+                      <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                      <input type="hidden" id="idAdministrador" name="idAdministrador">
+                      <div class="col-sm-12 col-md-6">
+                          <label for="nombreAdministrador" class="form-label">IMAGEN</label>
+                          <input id="nombreAdministrador" type="text" name="nombreAdministrador"
+                              class="form-control" required>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                          <label for="apellidoAdministrador" class="form-label">NOMBRE</label>
+                          <input id="apellidoAdministrador" type="text" name="apellidoAdministrador"
+                              class="form-control" required>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                          <label for="correoAdministrador" class="form-label">CALIFICACION</label>
+                          <input id="correoAdministrador" type="email" name="correoAdministrador"
+                              class="form-control" required>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                          <label for="claveAdministrador" class="form-label">FECHA</label>
+                          <input id="claveAdministrador" type="password" name="claveAdministrador"
+                              class="form-control" required>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <label for="nombreAdministrador" class="form-label">USUARIO</label>
+                        <input id="nombreAdministrador" type="text" name="nombreAdministrador"
+                            class="form-control" required>
+                    </div>
+                      <div class="form-check form-switch form-check-reverse">
+                        <input class="form-check-input" type="checkbox" id="estadoProducto"
+                            name="estadoProducto" checked>
+                        <label class="form-check-label" for="estadoProducto">Estado</label>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary">Guardar</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</main>
+
+<!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
+<!-- Llamada al framework y librería de mensajes -->
+<script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+<!-- Llamada al controlador general de la aplicación -->
+<script type="text/javascript" src="../../controllers/utils/components.js"></script>
+<!-- Llamada al controlador del sitio privado -->
+<script type="text/javascript" src="../../controllers/utils/admin.js"></script>
+    <!-- Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controllers/admin/valoracion.js"></script>
 </body>
 </html>

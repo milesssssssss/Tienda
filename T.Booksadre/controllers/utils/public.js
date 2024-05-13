@@ -11,7 +11,7 @@ MAIN.style.paddingTop = '75px';
 MAIN.style.paddingBottom = '100px';
 MAIN.classList.add('container');
 // Se establece el título de la página web.
-document.querySelector('title').textContent = 'CoffeeShop - Store';
+document.querySelector('title').textContent = 'Booksadre - Store';
 // Constante para establecer el elemento del título principal.
 const MAIN_TITLE = document.getElementById('mainTitle');
 MAIN_TITLE.classList.add('text-center', 'py-3');
@@ -78,7 +78,7 @@ const loadTemplate = async () => {
             <nav class="navbar fixed-bottom bg-body-tertiary">
                 <div class="container">
                     <div>
-                        <h6>CoffeeShop</h6>
+                        <h6>Booksadre</h6>
                         <p><i class="bi bi-c-square"></i> 2018-2024 Todos los derechos reservados</p>
                     </div>
                     <div>

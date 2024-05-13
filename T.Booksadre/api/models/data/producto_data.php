@@ -80,7 +80,7 @@ class ProductoData extends ProductoHandler
 
     public function setImagen($file, $filename = null)
     {
-        if (Validator::validateImageFile($file, 500)) {
+        if (Validator::validateImageFile($file, 200)) {
             $this->imagen = Validator::getFileName();
             return true;
         } elseif (Validator::getFileError()) {
