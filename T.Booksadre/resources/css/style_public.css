@@ -264,3 +264,32 @@ button:hover {
     transform: translate(-50%, -50%);
     text-align: center; /* Centro los elementos del formulario */
 }
+
+.navbar-nav.custom-nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.navbar-nav.custom-nav .nav-item {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.custom-nav-link {
+    font-size: 1.5rem; /* Ajusta el tamaño según lo necesites */
+    color: white; /* Cambia este valor al color que prefieras */
+}
+
+.custom-nav-link:hover {
+    color: gray; /* Color al pasar el cursor */
+}
+
+
+
+
+
+
+
+
+
