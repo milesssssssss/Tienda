@@ -56,15 +56,15 @@
       <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
       <thead>
           <tr>
-              <td colspan="5" id="rowsFound"></td>
+              <td colspan="7" id="rowsFound"></td>
           </tr>
           <tr>
               <th>NOMBRE</th>
               <th>APELLIDO</th>
-              <th>DUI</th>
-              <th>CORREO</th>
               <th>TELEFONO</th>
-              <th>DIRECCION</th>
+              <th>CORREO</th>
+              <th>DUI</th>
+              <th>NACIMIENTO</th>
               <th>ESTADO</th>
           </tr>
       </thead>
@@ -78,14 +78,14 @@
       <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content">
               <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="modalTitle"></h1>
+                  <h1 class="modal-title fs-6" id="modalTitle"></h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <!-- Formulario para guardar un registro -->
               <form id="saveForm">
-                  <div class="modal-body row g-3">
+                  <div class="modal-body row g-6">
                       <!-- Campo oculto para asignar el id del registro al momento de modificar -->
-                      <input type="hidden" id="idAdministrador" name="idAdministrador">
+                      <input type="hidden" id="idCliente" name="idCliente">
                       <div class="col-sm-12 col-md-6">
                           <label for="nombreCliente" class="form-label">NOMBRE</label>
                           <input id="nombreCliente" type="text" name="nombreCliente"
@@ -97,8 +97,8 @@
                               class="form-control" required>
                       </div>
                       <div class="col-sm-12 col-md-6">
-                          <label for="duiCliente" class="form-label">DUI</label>
-                          <input id="duiCliente" type="text" name="duiCliente"
+                          <label for="telefonoCliente" class="form-label">TELEFONO</label>
+                          <input id="telefonoCliente" type="text" name="telefonoCliente"
                               class="form-control" required>
                       </div>
                       <div class="col-sm-12 col-md-6">
@@ -107,19 +107,19 @@
                               class="form-control" required>
                       </div>
                       <div class="col-sm-12 col-md-6">
-                          <label for="telefonoCliente" class="form-label">TELEFONO</label>
-                          <input id="telefonoCliente" type="text" name="telefonoCliente"
+                          <label for="duiCliente" class="form-label">DUI</label>
+                          <input id="duiCliente" type="text" name="duiCliente"
                               class="form-control" required>
                       </div>
                       <div class="col-sm-12 col-md-6">
-                        <label for="direccionCliente" class="form-label">DIRECCION</label>
-                        <input id="direccionCliente" type="text" name="direccionCliente"
+                        <label for="nacimientoCliente" class="form-label">NACIMIENTO</label>
+                        <input id="nacimientoCliente" type="text" name="nacimientoCliente"
                             class="form-control" required>
                       </div> 
                       <div class="form-check form-switch form-check-reverse">
-                        <input class="form-check-input" type="checkbox" id="estadoProducto"
-                            name="estadoProducto" checked>
-                        <label class="form-check-label" for="estadoProducto">Estado</label>
+                        <input class="form-check-input" type="checkbox" id="estadoCliente"
+                            name="estadoCliente" checked>
+                        <label class="form-check-label" for="estadoCliente">Estado</label>
                     </div>
                   </div>
 

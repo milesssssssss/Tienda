@@ -30,21 +30,39 @@ const loadTemplate = async () => {
             // Se agrega el encabezado de la página web antes del contenido principal.
             MAIN.insertAdjacentHTML('beforebegin', `
                 <header>
-                    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-                        <div class="container">
-                            <a class="navbar-brand" href="index.html"><img src="../../resources/img/logo.png" height="50" alt="CoffeeShop"></a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                                <div class="navbar-nav ms-auto">
-                                    <a class="nav-link" href="index.html"><i class="bi bi-shop"></i> Catálogo</a>
-                                    <a class="nav-link" href="cart.html"><i class="bi bi-cart"></i> Carrito</a>
-                                    <a class="nav-link" href="#" onclick="logOut()"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a>
-                                </div>
+                <!-- Menú -->
+                <nav class="navbar bg-body-tertiary fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
+    
+                    <ul class="nav nav-underline position-absolute top-50 start-50 translate-middle">
+                        <li class="nav-item">
+                            <a class="nav-link-text" href="../../views/public/Index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-text" href="#">Catálogo</a>
+                        </li>
+                    </ul>
+    
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <div class="search-box">
+                                <input type="text" class="form-control" placeholder="Buscar">
+                                <a class="nav-link" href="#" style="--i:1;"><i class='bx bx-search-alt-2'></i></a>
                             </div>
-                        </div>
-                    </nav>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="carrito.html" style="--i:2;"><i class='bx bxs-cart'></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quienes_somos.html" style="--i:3;"><i class='bx bx-info-circle'></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html" style="--i:4;"><i class='bx bxs-user-circle'></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
                 </header>
             `);
         } else {
@@ -54,39 +72,87 @@ const loadTemplate = async () => {
         // Se agrega el encabezado de la página web antes del contenido principal.
         MAIN.insertAdjacentHTML('beforebegin', `
             <header>
-                <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-                    <div class="container">
-                        <a class="navbar-brand" href="index.html"><img src="../../resources/img/logo.png" height="50" alt="CoffeeShop"></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                            <div class="navbar-nav ms-auto">
-                                <a class="nav-link" href="index.html"><i class="bi bi-shop"></i> Catálogo</a>
-                                <a class="nav-link" href="signup.html"><i class="bi bi-person"></i> Crear cuenta</a>
-                                <a class="nav-link" href="login.html"><i class="bi bi-box-arrow-right"></i> Iniciar sesión</a>
-                            </div>
+            <nav class="navbar bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
+
+                <ul class="nav nav-underline position-absolute top-50 start-50 translate-middle">
+                    <li class="nav-item">
+                        <a class="nav-link-text" href="../../views/public/Index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-text" href="#">Catálogo</a>
+                    </li>
+                </ul>
+
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <div class="search-box">
+                            <input type="text" class="form-control" placeholder="Buscar">
+                            <a class="nav-link" href="#" style="--i:1;"><i class='bx bx-search-alt-2'></i></a>
                         </div>
-                    </div>
-                </nav>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html" style="--i:2;"><i class='bx bxs-cart'></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quienes_somos.html" style="--i:3;"><i class='bx bx-info-circle'></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" style="--i:4;"><i class='bx bxs-user-circle'></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
             </header>
         `);
     }
     // Se agrega el pie de la página web después del contenido principal.
     MAIN.insertAdjacentHTML('afterend', `
-        <footer>
-            <nav class="navbar fixed-bottom bg-body-tertiary">
-                <div class="container">
-                    <div>
-                        <h6>Booksadre</h6>
-                        <p><i class="bi bi-c-square"></i> 2018-2024 Todos los derechos reservados</p>
-                    </div>
-                    <div>
-                        <h6>Contáctanos</h6>
-                        <p><i class="bi bi-envelope"></i> dacasoft@outlook.com</p>
-                    </div>
-                </div>
-            </nav>
-        </footer>
+    <footer>
+    <div class="row align-items-center">
+      <div class="col text-center">
+        <img class="" src="../../resources/img/logo.png" alt="" width="250" height="110">
+        <div class="row mt-2 justify-content-center">
+          <div class="columna text-center">
+            <a class="nav-link-text">SIGUENOS</a>
+            <br><br>
+            <a href="https://web.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
+            <a href="https://www.instagram.com/booksadre/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.google.com/intl/es/gmail/about/"><i class='bx bxl-gmail'></i></a>
+            <br><br>
+          </div>
+        </div>
+        <small class="d-block mb-3 text-body-secondary">&copy; 2017-2024</small>
+      </div>
+      <div class="col">
+        <h8>Información para el cliente</h8>
+        <ul class="list-unstyled text-small">
+          <li class=""><a class="link-secondary text-decoration-none" href="promociones.html">Promociones</a></li>
+          <li class=""><a class="link-secondary text-decoration-none" href="politica_cookies.html">Política de cookies</a></li>
+          <li class=""><a class="link-secondary text-decoration-none" href="quienes_somos.html">¿Quienes somos?</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h8>Gestión de cuentas</h8>
+        <ul class="list-unstyled text-small">
+          <li class=""><a class="link-secondary text-decoration-none" href="login.html">Mi cuenta</a></li>
+        <li class=""><a class="link-secondary text-decoration-none" href="registro.html">Registrarme </a></li>
+        <li class=""><a class="link-secondary text-decoration-none" href="recuperar_contraseñas.html">Recuperar clave</a></li>
+        <li class=""><a class="link-secondary text-decoration-none" href="como_comprar.html">¿Como comprar en línea?</a></li>
+        </ul>
+      </div>
+      <div class="col">
+       
+        <ul class="list-unstyled text-small">
+          <li class=""><a class="link-secondary text-decoration-none" href="#"></a></li>
+          <li class=""><a class="link-secondary text-decoration-none" href="#"></a></li>
+          <li class=""><a class="link-secondary text-decoration-none" href="#"></a></li>
+          <li class=""><a class="link-secondary text-decoration-none" href="#"></a></li>
+        </ul>
+      </div>
+    </div>
+  
+  </footer>
     `);
 }

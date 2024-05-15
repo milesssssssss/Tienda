@@ -1,5 +1,5 @@
 // Constante para completar la ruta de la API.
-const clienteAPI = 'services/admin/cliente.php';
+const CLIENTE_API = 'services/cliente.php';
 // Constante para establecer el formulario de buscar.
 const SEARCH_FORM = document.getElementById('searchForm');
 // Constantes para establecer los elementos de la tabla.
@@ -10,11 +10,13 @@ const SAVE_MODAL = new bootstrap.Modal('#saveModal'),
     MODAL_TITLE = document.getElementById('modalTitle');
 // Constantes para establecer los elementos del formulario de guardar.
 const SAVE_FORM = document.getElementById('saveForm'),
-    ID_CLIENTE= document.getElementById('idCliente'),
-    NOMBRE_CLIENTE= document.getElementById('nombreCliente'),
+    id_CLIENTE= document.getElementById('idCliente'),
+    NOMBRE_CLIENTE = document.getElementById('nombreCliente'),
     APELLIDO_CLIENTE = document.getElementById('apellidoCliente'),
     CORREO_CLIENTE = document.getElementById('correoCliente'),
-    TELEFONO_CLIENTE = document.getElementById('TelefonoCliente'),
+    TELEFONO_CLIENTE = document.getElementById('telefonoCliente'),
+    DUI_CLIENTE = document.getElementById('duiCliente'),
+    NACIMIENTO_CLIENTE = document.getElementById('nacimientoCliente'),
     ESTADO_CLIENTE = document.getElementById('estadoCliente');
 
 // Método del evento para cuando el documento ha cargado.
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Llamada a la función para mostrar el encabezado y pie del documento.
     loadTemplate();
     // Se establece el título del contenido principal.
-    MAIN_TITLE.textContent = 'Gestionar Clientes';
+    MAIN_TITLE.textContent = 'Gestionar cliente';
     // Llamada a la función para llenar la tabla con los registros existentes.
     fillTable();
 });
@@ -42,11 +44,11 @@ SAVE_FORM.addEventListener('submit', async (event) => {
     // Se evita recargar la página web después de enviar el formulario.
     event.preventDefault();
     // Se verifica la acción a realizar.
-    (ID_PRODUCTO.value) ? action = 'updateRow' : action = 'createRow';
+    (ID_ADMINISTRADOR.value) ? action = 'updateRow' : action = 'createRow';
     // Constante tipo objeto con los datos del formulario.
     const FORM = new FormData(SAVE_FORM);
     // Petición para guardar los datos del formulario.
-    const DATA = await fetchData(PRODUCTO_API, action, FORM);
+    const DATA = await fetchData(CLIENTE_API, action, FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se cierra la caja de diálogo.
@@ -72,29 +74,32 @@ const fillTable = async (form = null) => {
     // Se verifica la acción a realizar.
     (form) ? action = 'searchRows' : action = 'readAll';
     // Petición para obtener los registros disponibles.
-    const DATA = await fetchData(PRODUCTO_API, action, form);
+    const DATA = await fetchData(CLIENTE_API, action, form);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
-        // Se recorre el conjunto de registros (dataset) fila por fila a través del objeto row.
+        // Se recorre el conjunto de registros fila por fila.
         DATA.dataset.forEach(row => {
             // Se establece un icono para el estado del producto.
-            (row.estado_producto) ? icon = 'bi bi-eye-fill' : icon = 'bi bi-eye-slash-fill';
+            (row.estado_cliente) ? icon = 'bi bi-eye-fill' : icon = 'bi bi-eye-slash-fill';
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             TABLE_BODY.innerHTML += `
-            <tr>
-            <td>${row.apellido_cliente}</td>
-            <td>${row.nombre_cliente}</td>
-            <td>${row.correo_cliente}</td>
-            <td>${row.telefono_cliente}</td>
-            <td>
-                <button type="button" class="btn btn-info" onclick="openUpdate(${row.id_cliente})">
-                    <i class="bi bi-pencil-fill"></i>
-                </button>
-                <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_cliente})">
-                    <i class="bi bi-trash-fill"></i>
-                </button>
-            </td>
-        </tr>
+                <tr>
+                    <td>${row.apellido_cliente}</td>
+                    <td>${row.nombre_cliente}</td>
+                    <td>${row.correo_cliente}</td>
+                    <td>${row.telefono_cliente}</td>
+                    <td>${row.dui_cliente}</td>
+                    <td>${row.nacimiento_cliente}</td>
+                    <td><i class="${icon}"></i></td>
+                    <td>
+                        <button type="button" class="btn btn-info" onclick="openUpdate(${row.id_cliente})">
+                            <i class="bi bi-pencil-fill"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_cliente})">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    </td>
+                </tr>
             `;
         });
         // Se muestra un mensaje de acuerdo con el resultado.
@@ -113,6 +118,11 @@ const openCreate = () => {
     // Se muestra la caja de diálogo con su título.
     SAVE_MODAL.show();
     MODAL_TITLE.textContent = 'Crear cliente';
+    // Se prepara el formulario.
+    SAVE_FORM.reset();
+    DUI_CLIENTE.disabled = false;
+    CORREO_CLIENTE.disabled = false;
+    TELEFONO_CLIENTE.disabled = false;
 }
 
 /*
@@ -121,11 +131,11 @@ const openCreate = () => {
 *   Retorno: ninguno.
 */
 const openUpdate = async (id) => {
-    // Se define un objeto con los datos del registro seleccionado.
+    // Se define una constante tipo objeto con los datos del registro seleccionado.
     const FORM = new FormData();
     FORM.append('idCliente', id);
     // Petición para obtener los datos del registro solicitado.
-    const DATA = await fetchData(PRODUCTO_API, 'readOne', FORM);
+    const DATA = await fetchData(CLIENTE_API, 'readOne', FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se muestra la caja de diálogo con su título.
@@ -133,16 +143,19 @@ const openUpdate = async (id) => {
         MODAL_TITLE.textContent = 'Actualizar cliente';
         // Se prepara el formulario.
         SAVE_FORM.reset();
-        EXISTENCIAS_PRODUCTO.disabled = true;
+        DUI_CLIENTE.disabled = true;
+        CORREO_CLIENTE.disabled = true;
+        TELEFONO_CLIENTE.disabled = true;
         // Se inicializan los campos con los datos.
         const ROW = DATA.dataset;
-        ID_PRODUCTO.value = ROW.id_producto;
+        id_CLIENTE.value = ROW.id_cliente;
         NOMBRE_CLIENTE.value = ROW.nombre_cliente;
-        DESCRIPCION_PRODUCTO.value = ROW.descripcion_producto;
-        PRECIO_PRODUCTO.value = ROW.precio_producto;
-        EXISTENCIAS_PRODUCTO.value = ROW.existencias_producto;
-        ESTADO_PRODUCTO.checked = ROW.estado_producto;
-        fillSelect(CATEGORIA_API, 'readAll', 'categoriaProducto', ROW.id_categoria);
+        APELLIDO_CLIENTE.value = ROW.apellido_cliente;
+        CORREO_CLIENTE.value = ROW.correo_cliente;
+        TELEFONO_CLIENTE.value = ROW.telefono_cliente;
+        DUI_CLIENTE.value = ROW.dui_cliente;
+        NACIMIENTO_CLIENTE.value = ROW.nacimiento_cliente;
+        ESTADO_CLIENTE.value = ROW.estado_cliente;
     } else {
         sweetAlert(2, DATA.error, false);
     }
@@ -155,14 +168,14 @@ const openUpdate = async (id) => {
 */
 const openDelete = async (id) => {
     // Llamada a la función para mostrar un mensaje de confirmación, capturando la respuesta en una constante.
-    const RESPONSE = await confirmAction('¿Desea eliminar el producto de forma permanente?');
+    const RESPONSE = await confirmAction('¿Desea eliminar al cliente de forma permanente?');
     // Se verifica la respuesta del mensaje.
     if (RESPONSE) {
         // Se define una constante tipo objeto con los datos del registro seleccionado.
         const FORM = new FormData();
-        FORM.append('idProducto', id);
+        FORM.append('idCLiente', id);
         // Petición para eliminar el registro seleccionado.
-        const DATA = await fetchData(PRODUCTO_API, 'deleteRow', FORM);
+        const DATA = await fetchData(CLIENTE_API, 'deleteRow', FORM);
         // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
         if (DATA.status) {
             // Se muestra un mensaje de éxito.
@@ -173,16 +186,4 @@ const openDelete = async (id) => {
             sweetAlert(2, DATA.error, false);
         }
     }
-}
-
-/*
-*   Función para abrir un reporte automático de productos por categoría.
-*   Parámetros: ninguno.
-*   Retorno: ninguno.
-*/
-const openReport = () => {
-    // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
-    const PATH = new URL(`${SERVER_URL}reports/admin/productos.php`);
-    // Se abre el reporte en una nueva pestaña.
-    window.open(PATH.href);
 }
