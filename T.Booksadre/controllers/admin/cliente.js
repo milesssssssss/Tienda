@@ -83,6 +83,7 @@ const fillTable = async (form = null) => {
         // Se recorre el conjunto de registros fila por fila.
         DATA.dataset.forEach(row => {
             // Se establece un icono para el estado del producto.
+    
             (row.estado_cliente) ? icon = 'bi bi-eye-fill' : icon = 'bi bi-eye-slash-fill';
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             TABLE_BODY.innerHTML += `
@@ -94,7 +95,6 @@ const fillTable = async (form = null) => {
                     <td>${row.dui_cliente}</td>
                     <td>${row.nacimiento_cliente}</td>
                     <td>${row.direccion_cliente}</td>
-                    <td>${row.clave_cliente}</td>
                     <td><i class="${icon}"></i></td>
                     <td>
                         <button type="button" class="btn btn-info" onclick="openUpdate(${row.id_cliente})">
