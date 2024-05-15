@@ -1,99 +1,104 @@
 <?php
 // Se incluye la clase del modelo.
-require_once('../../models/data/pedido_data.php');
+require_once('../../modelos/data/pedidos_data.php');
 // Se comprueba si existe una acción a realizar, de lo contrario se finaliza el script con un mensaje de error.
 if (isset($_GET['action'])) {
     // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en el script.
     session_start();
     // Se instancia la clase correspondiente.
-    $cliente = new ClienteData;
+    $pedido = new PedidosData;
     // Se declara e inicializa un arreglo para guardar el resultado que retorna la API.
-    $result = array('status' => 0, 'session' => 0, 'message' => null, 'dataset' => null, 'error' => null, 'exception' => null, 'username' => null);
+    $result = array('status' => 0, 'message' => null, 'dataset' => null, 'error' => null, 'exception' => null, 'fileStatus' => null);
     // Se verifica si existe una sesión iniciada como administrador, de lo contrario se finaliza el script con un mensaje de error.
-    if (isset($_SESSION['idAdministrador'])) {
+    if (isset($_SESSION['idAdministrador']) and Validator::validateSessionTime()) {
         // Se compara la acción a realizar cuando un administrador ha iniciado sesión.
         switch ($_GET['action']) {
             case 'searchRows':
                 if (!Validator::validateSearch($_POST['search'])) {
                     $result['error'] = Validator::getSearchError();
-                } elseif ($result['dataset'] = $cliente->searchRows()) {
+                } elseif ($result['dataset'] = $pedido->searchRows()) {
                     $result['status'] = 1;
                     $result['message'] = 'Existen ' . count($result['dataset']) . ' coincidencias';
                 } else {
                     $result['error'] = 'No hay coincidencias';
                 }
                 break;
-                case 'createRow':
-                    $_POST = Validator::validateForm($_POST);
-                    if (
-                        !$cliente->setNombre($_POST['nombreCliente']) or
-                        !$cliente->setApellido($_POST['apellidoCliente']) or
-                        !$cliente->setCorreo($_POST['correoCliente']) or
-                        !$cliente->setDUI($_POST['duiCliente']) or
-                        !$cliente->setNacimiento($_POST['nacimientoCliente']) or
-                        !$cliente->setTelefono($_POST['telefonoCliente']) or
-                        !$cliente->setEstado(isset($_POST['estadoCliente']) ? 1 : 0)or
-                        !$cliente->setDireccion($_POST['direccionCliente']) or
-                        !$cliente->setClave($_POST['claveCliente'])
-                    ) {
-                        $result['error'] = $cliente->getDataError();
-                    } elseif ($cliente->createRow()) {
-                        $result['status'] = 1;
-                        $result['message'] = 'cliente creado correctamente';
-                        // Se asigna el estado del archivo después de insertar.
-                        
-                    } else {
-                        $result['error'] = 'Ocurrió un problema al crear el cliente';
-                    }
-                    break;
             case 'readAll':
-                if ($result['dataset'] = $cliente->readAll()) {
+                if ($result['dataset'] = $pedido->readAll()) {
                     $result['status'] = 1;
                     $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
                 } else {
                     $result['error'] = 'No hay clientes registrados';
                 }
                 break;
-                case 'readOne':
-                    if (!$cliente->setId($_POST['idCliente'])) {
-                        $result['error'] = 'Cliente incorrecto';
-                    } elseif ($result['dataset'] = $cliente->readOne()) {
+                // Ver uno
+            case 'readOne':
+                if (!$pedido->setId($_POST['idPedido'])) {
+                    $result['error'] = 'Pedido incorrecto';
+                } elseif ($result['dataset'] = $pedido->readOne()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'Pedido inexistente';
+                }
+                break;
+                case 'searchList':
+                    if (!Validator::validateSearch($_POST['search'])) {
+                        $result['error'] = Validator::getSearchError();
+                    } elseif ($result['dataset'] = $pedido->searchList()) {
                         $result['status'] = 1;
+                        $result['message'] = 'Existen ' . count($result['dataset']) . ' coincidencias';
                     } else {
-                        $result['error'] = 'Cliente inexistente';
+                        $result['error'] = 'No hay coincidencias';
                     }
                     break;
-                case 'updateRow':
-                    $_POST = Validator::validateForm($_POST);
-                    if (
-                        !$cliente->setId($_POST['idCliente']) or
-                        !$cliente->setNombre($_POST['nombreCliente']) or
-                        !$cliente->setApellido($_POST['apellidoCliente']) or
-                        !$cliente->setDUI($_POST['duiCliente']) or
-                        !$cliente->setNacimiento($_POST['nacimientoCliente']) or
-                        !$cliente->setTelefono($_POST['telefonoCliente']) or
-                        !$cliente->setEstado(isset($_POST['estadoCliente']) ? 1 : 0)or
-                        !$cliente->setDireccion($_POST['direccionCliente'])
-                    ) {
-                        $result['error'] = $cliente->getDataError();
-                    } elseif ($cliente->updateRow()) {
+                case 'readAllList':
+                    if ($result['dataset'] = $pedido->readAllList()) {
                         $result['status'] = 1;
-                        $result['message'] = 'cliente modificado correctamente';
+                        $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
                     } else {
-                        $result['error'] = 'Ocurrió un problema al modificar el cliente';
-                    }
-                  break;
-                  case 'deleteRow':
-                   if (!$cliente->setId($_POST['idCliente'])) {
-                        $result['error'] = $cliente->getDataError();
-                    } elseif ($cliente->deleteRow()) {
-                        $result['status'] = 1;
-                        $result['message'] = 'Administrador eliminado correctamente';
-                    } else {
-                        $result['error'] = 'Ocurrió un problema al eliminar el administrador';
+                        $result['error'] = 'No hay clientes registrados';
                     }
                     break;
-            
+                    // Ver uno
+                case 'readOneList':
+                    if (!$pedido->setId($_POST['idPedido'])) {
+                        $result['error'] = 'Pedido incorrecto';
+                    } elseif ($result['dataset'] = $pedido->readOneList()) {
+                        $result['status'] = 1;
+                    } else {
+                        $result['error'] = 'Pedido inexistente';
+                    }
+                    break;
+                // Contar pedidos entregados
+            case 'checkOrders':
+                if ($result['dataset'] = $pedido->checkOrders()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'Error en el conteo de ordenes';
+                }
+                break;
+                // Calcular las ganancias
+            case 'totalProfits':
+                if ($result['dataset'] = $pedido->totalProfits()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'Error en el calculo de ganancias';
+                }
+                break;
+            // Estado
+            case 'changeState':
+                if (
+                    !$pedido->setId($_POST['idPedido']) or
+                    !$pedido->setEstado($_POST['estado'])
+                ) {
+                    $result['error'] = $pedido->getDataError();
+                } elseif ($pedido->changeState()) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Estado del cliente cambiado correctamente';
+                } else {
+                    $result['error'] = 'Ocurrió un problema al alterar el estado del cliente';
+                }
+                break;
             default:
                 $result['error'] = 'Acción no disponible dentro de la sesión';
         }
@@ -109,3 +114,4 @@ if (isset($_GET['action'])) {
 } else {
     print(json_encode('Recurso no disponible'));
 }
+ 

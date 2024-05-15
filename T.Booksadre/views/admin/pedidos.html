@@ -21,6 +21,98 @@
   <br>
    <!-- Contenido principal del documento -->
  <main>
+
+    <!-- Cartas-->
+<div class="container col-md-10 mt-4">
+    <div class="row row-cols-1 row-cols-md-3 gx-4 gy-4">
+        <!-- Pedidos entregados-->
+        <div class="col mb-4">
+            <div class="card bg-success border-dark cabezera">
+                <div class="card-header bg-transparent border-light text-white">Pedidos entregados ✅</div>
+                <div class="card-body text-white">
+                    <h5 class="card-title">Pedidos entregados:</h5>
+                    <p class="card-text" id="numero"></p>
+                </div>
+                <div class="card-footer bg-transparent border-light text-white">Booksadre</div>
+            </div>
+        </div>
+        <!-- Ganancias de las hamacas-->
+        <div class="col mb-4">
+            <div class="card bg-success border-dark cabezera">
+                <div class="card-header bg-transparent border-light text-white">Ganancias de ventas 💵</div>
+                <div class="card-body text-white">
+                    <h5 class="card-title">Ganancias totales:</h5>
+                    <p class="card-text" id="ganancias"></p>
+                </div>
+                <div class="card-footer bg-transparent border-light text-white">Booksadre</div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+     
+    <!-- Componente Modal para guardar un registro -->
+    <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalTitle"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Formulario para crear o actualizar un registro -->
+                <form id="saveForm">
+                    <div class="modal-body row g-3">
+                        <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                        <input type="number" id="idPedido" name="idPedido" class="invisible">
+                        <div class="col-sm-12 col-md-6">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select id="estado" name="estado" class="form-select" required>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer col-sm-12 col-md-12 col-lg-12">
+                        <button type="reset" class="btn btn-outline-dark">Cancelar</button>
+                        <button type="submit" class="btn btn-outline-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+     
+    <!-- Modal de detalle de pedido -->
+    <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table align-middle table-striped table-borderless">
+                            <!-- Cabeza de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
+                            <thead>
+                                <tr>
+                                    <td colspan="6" id="rowsFound"></td>
+                                </tr>
+                                <tr>
+                                    <th>Foto</th>
+                                    <th>Nombre del producto</th>
+                                    <th>Cantidad comprada</th>
+                                    <th>Precio total</th>
+                                </tr>
+                            </thead>
+                            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+                            <tbody id="tabla_detalle"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   <!-- Título del contenido principal -->
   <h3 id="mainTitle"></h3>
   <div class="row">
@@ -48,72 +140,91 @@
     </div>
 </div>
 
-  <!-- Tabla para mostrar los registros existentes -->
-  <table class="table table-hover">
-      <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
-      <thead>
-          <tr>
-              <td colspan="5" id="rowsFound"></td>
-          </tr>
-          <tr>
-              <th>PEDIDO</th>
-              <th>CLIENTE</th>
-              <th>DIRECCION</th>
-              <th>ESTADO</th>
-              <th>FECHA</th>
-          </tr>
-      </thead>
-      <!-- Cuerpo de la tabla para mostrar un registro por fila -->
-      <tbody id="tableBody"></tbody>
-  </table>
-
-  <!-- Componente Modal para guardar un registro -->
-  <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="modalTitle" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="modalTitle"></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <!-- Formulario para guardar un registro -->
-              <form id="saveForm">
-                  <div class="modal-body row g-3">
-                      <!-- Campo oculto para asignar el id del registro al momento de modificar -->
-                      <input type="hidden" id="idAdministrador" name="idAdministrador">
-                      <div class="col-sm-12 col-md-6">
-                          <label for="nombreAdministrador" class="form-label">PEDIDO</label>
-                          <input id="nombreAdministrador" type="text" name="nombreAdministrador"
-                              class="form-control" required>
-                      </div>
-                      <div class="col-sm-12 col-md-6">
-                          <label for="apellidoAdministrador" class="form-label">CLIENTE</label>
-                          <input id="apellidoAdministrador" type="text" name="apellidoAdministrador"
-                              class="form-control" required>
-                      </div>
-                      <div class="col-sm-12 col-md-6">
-                          <label for="correoAdministrador" class="form-label">DIRECCION</label>
-                          <input id="correoAdministrador" type="email" name="correoAdministrador"
-                              class="form-control" required>
-                      </div>
-                      <div class="col-sm-12 col-md-6">
-                          <label for="claveAdministrador" class="form-label">FECHA</label>
-                          <input id="claveAdministrador" type="password" name="claveAdministrador"
-                              class="form-control" required>
-                      </div>
-                      <div class="form-check form-switch form-check-reverse">
-                        <input class="form-check-input" type="checkbox" id="estadoProducto"
-                            name="estadoProducto" checked>
-                        <label class="form-check-label" for="estadoProducto">Estado</label>
+      <!-- Columna para la tabla-->
+      <div class="container col-md-10">
+        <!-- Tabla para mostrar los registros existentes -->
+        <table class="table table-hover">
+            <!-- Cabeza de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
+            <thead>
+                <tr>
+                    <td colspan="6" id="rowsFound"></td>
+                </tr>
+                <tr>
+                    <th>FOTO</th>
+                    <th>CLIENTE</th>
+                    <th>DIRECCIÓN DEL PEDIDO</th>
+                    <th>FECHA DE PEDIDO</th>
+                    <th>ESTADO DE PEDIDO</th>
+                </tr>
+            </thead>
+            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+            <tbody id="tabla_pedidos"></tbody>
+        </table>
+    </div>
+     
+     
+    <!-- Componente Modal para guardar un registro -->
+    <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalTitle"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Formulario para crear o actualizar un registro -->
+                <form id="saveForm">
+                    <div class="modal-body row g-3">
+                        <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                        <input type="number" id="idPedido" name="idPedido" class="invisible">
+                        <div class="col-sm-12 col-md-6">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select id="estado" name="estado" class="form-select" required>
+                            </select>
+                        </div>
                     </div>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="submit" class="btn btn-primary">Guardar</button>
-                  </div>
-              </form>
-          </div>
-      </div>
-  </div>
+                    <div class="modal-footer col-sm-12 col-md-12 col-lg-12">
+                        <button type="reset" class="btn btn-outline-dark">Cancelar</button>
+                        <button type="submit" class="btn btn-outline-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+     
+    <!-- Modal de detalle de pedido -->
+    <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table align-middle table-striped table-borderless">
+                            <!-- Cabeza de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
+                            <thead>
+                                <tr>
+                                    <td colspan="6" id="rowsFound"></td>
+                                </tr>
+                                <tr>
+                                    <th>Foto</th>
+                                    <th>Nombre del producto</th>
+                                    <th>Cantidad comprada</th>
+                                    <th>Precio total</th>
+                                </tr>
+                            </thead>
+                            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+                            <tbody id="tabla_detalle"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
