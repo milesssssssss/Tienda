@@ -22,5 +22,6 @@ class DetallesPedidosHandler
         ORDER BY nombre_libro;';
         $params = array($this->id);
         return Database::getRows($sql, $params);
-    }
+
+      }
 }

@@ -1,56 +1,77 @@
 <?php
 // Se incluye la clase para trabajar con la base de datos.
-require_once('../../helpers/database.php'); 
+require_once('../../helpers/database.php');
 /*
- *  Clase para manejar el comportamiento de los datos de la tabla administrador.
- */
-class PedidosHandler
+*	Clase para manejar el comportamiento de los datos de las tablas PEDIDO y DETALLE_PEDIDO.
+*/
+class PedidoHandler
 {
     /*
-     *  Declaración de atributos para el manejo de datos.
-     */
+    *   Declaración de atributos para el manejo de datos.
+    */
     protected $id = null;
+    protected $cliente = null;
+    protected $direccion = null;
     protected $estado = null;
+    protected $fecha = null;
 
+   
     /*
-     *  Métodos para realizar las operaciones SCRUD (search, create, read, update, and delete).
-     */
-    //Buscar historial
+    *   Métodos para realizar las operaciones SCRUD (search, create, read, update, and delete).
+    */
+
     public function searchRows()
-    {
-        $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT p.id_pedido AS ID, c.nombre_cliente, p.direccion_pedido, p.fecha_pedido, p.estado_pedido FROM tb_pedidos p
-        INNER JOIN clientes c ON p.id_cliente = c.id_cliente
-        WHERE nombre_cliente LIKE ? OR apellido_cliente LIKE ?
-        ORDER BY nombre_cliente;';
-        $params = array($value, $value);
-        return Database::getRows($sql, $params);
-    }
-    //Leer historial
-    public function readAll()
-    {
-        $sql = 'SELECT p.id_pedido AS ID, c.nombre_cliente, p.direccion_pedido, p.fecha_pedido, p.estado_pedido FROM tb_pedidos  p
-        INNER JOIN tb_clientes c ON p.id_cliente = c.id_cliente
-        ORDER BY nombre_cliente;';
-        return Database::getRows($sql);
-    }
+{
+    $value = '%' . Validator::getSearchValue() . '%';
+    $sql = 'SELECT id_pedido, id_cliente, direccion_pedido, fecha_pedido, estado_pedido
+            FROM pedido
+            WHERE id_pedido LIKE ? OR id_cliente LIKE ? OR direccion_pedido LIKE ? OR estado_pedido LIKE ?
+            ORDER BY fecha_pedido';
+    $params = array($value, $value, $value, $value);
+    return Database::getRows($sql, $params);
+}
 
-    //Función para leer un pedido del historial.
-    public function readOne()
-    {
-        $sql = 'SELECT p.id_pedido AS ID, c.nombre_cliente, p.direccion_pedido, p.fecha_pedido, p.estado_pedido FROM tb_pedidos p
-        INNER JOIN tb_clientes c ON p.id_cliente = c.id_cliente
-        WHERE id_pedido = ?
-        ORDER BY nombre_cliente;';
-        $params = array($this->id);
-        return Database::getRow($sql, $params);
-    }
+public function createRow()
+{
+    $sql = 'INSERT INTO pedido(id_cliente, direccion_pedido, estado_pedido)
+            VALUES(?, ?, ?)';
+    $params = array($this->cliente, $this->direccion, $this->estado);
+    return Database::executeRow($sql, $params);
+}
 
-    //Función para cambiar el estado de un cliente.
-    public function changeState()
-    {
-        $sql = 'CALL actualizar_estado_pedido(?,?);';
-        $params = array($this->id, $this->estado);
-        return Database::executeRow($sql, $params);
-    }
+public function readAll()
+{
+    $sql = 'SELECT id_pedido, id_cliente, direccion_pedido, fecha_pedido, estado_pedido
+            FROM pedido
+            ORDER BY direccion_pedido';
+    return Database::getRows($sql);
+}
+
+
+public function readOne()
+{
+    $sql = 'SELECT id_pedido, id_cliente, direccion_pedido, fecha_pedido, estado_pedido
+            FROM pedido
+            WHERE id_pedido = ?';
+    $params = array($this->id);
+    return Database::getRow($sql, $params);
+}
+
+public function updateRow()
+{
+    $sql = 'UPDATE pedido
+            SET id_cliente = ?, direccion_pedido = ?, estado_pedido = ?
+            WHERE id_pedido = ?';
+    $params = array($this->cliente, $this->direccion, $this->estado, $this->id);
+    return Database::executeRow($sql, $params);
+}
+
+public function deleteRow()
+{
+    $sql = 'DELETE FROM pedido
+            WHERE id_pedido = ?';
+    $params = array($this->id);
+    return Database::executeRow($sql, $params);
+}
+
 }
