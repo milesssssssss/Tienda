@@ -7,6 +7,7 @@
     <title></title>
     <!-- Metadatos de la página web -->
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- IMPORTACIÓN DE RECURSOS EXTERNOS -->
     <!-- Llamada al icono de la página web -->
@@ -14,6 +15,7 @@
     <!-- Llamada a las hojas de estilos del framework e iconos -->
     <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-icons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../../resources/css/style_inicio.css">
 </head>
 
@@ -87,8 +89,8 @@
                     <!-- Campo oculto para asignar el id del registro al momento de modificar -->
                     <input type="hidden" id="idPedido" name="idPedido">
                     <div class="col-sm-12 col-md-6">
-                        <label for="categoriaProducto" class="form-label">CLIENTE</label>
-                        <select id="categoriaProducto" name="categoriaProducto" class="form-select" required>
+                        <label for="clientePedido" class="form-label">CLIENTE</label>
+                        <select id="clientePedido" name="clientePedido" class="form-select" required>
                         </select>
                     </div>
                     <div class="col-sm-12 col-md-6">
@@ -97,8 +99,8 @@
                             class="form-control" required>
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        <label for="fechaPedido" class="form-label">FECHA</label>
-                        <input id="fechaPedido" type="datetime-local" name="fechaPedido"
+                        <label for="fechaRegistro" class="form-label">FECHA</label>
+                        <input id="fechaRegistro" type="date" name="fechaRegistro"
                             class="form-control" required>
                     </div>
                     <div class="form-check form-switch form-check-reverse">

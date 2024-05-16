@@ -27,6 +27,7 @@ class PedidoData extends PedidoHandler
     }
 
 
+
     public function setCliente($value)
     {
         if (Validator::validateNaturalNumber($value)) {

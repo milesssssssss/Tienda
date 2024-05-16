@@ -6,7 +6,7 @@ if (isset($_GET['action'])) {
     // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en el script.
     session_start();
     // Se instancia la clase correspondiente.
-    $cliente = new ClienteData;
+    $pedido = new PedidoData;
     // Se declara e inicializa un arreglo para guardar el resultado que retorna la API.
     $result = array('status' => 0, 'session' => 0, 'message' => null, 'dataset' => null, 'error' => null, 'exception' => null, 'username' => null);
     // Se verifica si existe una sesión iniciada como administrador, de lo contrario se finaliza el script con un mensaje de error.
@@ -16,7 +16,7 @@ if (isset($_GET['action'])) {
             case 'searchRows':
                 if (!Validator::validateSearch($_POST['search'])) {
                     $result['error'] = Validator::getSearchError();
-                } elseif ($result['dataset'] = $cliente->searchRows()) {
+                } elseif ($result['dataset'] = $pedido->searchRows()) {
                     $result['status'] = 1;
                     $result['message'] = 'Existen ' . count($result['dataset']) . ' coincidencias';
                 } else {
@@ -34,7 +34,7 @@ if (isset($_GET['action'])) {
                     ) {
                         $result['error'] = $pedido->getDataError();
 
-                    } elseif ($cliente->createRow()) {
+                    } elseif ($pedido->createRow()) {
                         $result['status'] = 1;
                         $result['message'] = 'pedido creado correctamente';
                         // Se asigna el estado del archivo después de insertar.
@@ -44,7 +44,7 @@ if (isset($_GET['action'])) {
                     }
                     break;
                     case 'readAll':
-                        if ($result['dataset'] = $cliente->readAll()) {
+                        if ($result['dataset'] = $pedido->readAll()) {
                             $result['status'] = 1;
                             $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
                         } else {
@@ -70,8 +70,8 @@ if (isset($_GET['action'])) {
                         !$pedido->setFecha($_POST['fechaRegistro']) 
 
                     ) {
-                        $result['error'] = $cliente->getDataError();
-                    } elseif ($cliente->updateRow()) {
+                        $result['error'] = $pedido->getDataError();
+                    } elseif ($pedido->updateRow()) {
                         $result['status'] = 1;
                         $result['message'] = 'pedido modificado correctamente';
                     } else {
@@ -79,9 +79,9 @@ if (isset($_GET['action'])) {
                     }
                   break;
                   case 'deleteRow':
-                   if (!$cliente->setId($_POST['idPedido'])) {
-                        $result['error'] = $cliente->getDataError();
-                    } elseif ($cliente->deleteRow()) {
+                   if (!$pedido->setId($_POST['idPedido'])) {
+                        $result['error'] = $pedido->getDataError();
+                    } elseif ($pedido->deleteRow()) {
                         $result['status'] = 1;
                         $result['message'] = 'pedido eliminado correctamente';
                     } else {

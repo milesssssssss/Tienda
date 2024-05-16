@@ -23,25 +23,25 @@ class PedidoHandler
     public function searchRows()
 {
     $value = '%' . Validator::getSearchValue() . '%';
-    $sql = 'SELECT id_pedido, id_cliente, direccion_pedido, fecha_pedido, estado_pedido
+    $sql = 'SELECT id_pedido, id_cliente, direccion_pedido, fecha_registro, estado_pedido
             FROM pedido
-            WHERE id_pedido LIKE ? OR id_cliente LIKE ? OR direccion_pedido LIKE ? OR estado_pedido LIKE ?
-            ORDER BY fecha_pedido';
+            WHERE nombre_cliente LIKE ? OR id_cliente LIKE ? OR direccion_pedido LIKE ? OR estado_pedido LIKE ?
+            ORDER BY direccion_pedido';
     $params = array($value, $value, $value, $value);
     return Database::getRows($sql, $params);
 }
 
 public function createRow()
 {
-    $sql = 'INSERT INTO pedido(id_cliente, direccion_pedido, estado_pedido)
-            VALUES(?, ?, ?)';
-    $params = array($this->cliente, $this->direccion, $this->estado);
+    $sql = 'INSERT INTO pedido(id_cliente, direccion_pedido, fecha_registro, estado_pedido)
+            VALUES(?, ?, ?, ?)';
+    $params = array($this->cliente, $this->direccion, $this->fecha,$this->estado);
     return Database::executeRow($sql, $params);
 }
 
 public function readAll()
 {
-    $sql = 'SELECT id_pedido, id_cliente, direccion_pedido, fecha_pedido, estado_pedido
+    $sql = 'SELECT id_pedido, id_cliente, direccion_pedido, fecha_registro, estado_pedido
             FROM pedido
             ORDER BY direccion_pedido';
     return Database::getRows($sql);
@@ -50,7 +50,7 @@ public function readAll()
 
 public function readOne()
 {
-    $sql = 'SELECT id_pedido, id_cliente, direccion_pedido, fecha_pedido, estado_pedido
+    $sql = 'SELECT id_pedido, id_cliente, direccion_pedido, fecha_registro, estado_pedido
             FROM pedido
             WHERE id_pedido = ?';
     $params = array($this->id);
