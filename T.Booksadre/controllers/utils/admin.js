@@ -77,7 +77,10 @@ const loadTemplate = async () => {
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="../../views/admin/valoracion.html"><i class='bx bxs-message-rounded-dots' ></i> Reseñas</a>
-                          </li>
+                          </li> 
+                          <li class="nav-item">
+                          <a class="nav-link" href="../../views/admin/detalle_pedido.html"><i class='bx bx-detail'  ></i> detalle pedido</a>
+                        </li>
                           <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Cuenta: <b>${DATA.username}</b></a>
                               <ul class="dropdown-menu">

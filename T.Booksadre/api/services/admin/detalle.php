@@ -6,7 +6,7 @@ if (isset($_GET['action'])) {
     // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en el script.
     session_start();
     // Se instancia la clase correspondiente.
-    $pedido = new DetallesPedidosData;
+    $detalle = new DetalleData;
     // Se declara e inicializa un arreglo para guardar el resultado que retorna la API.
     $result = array('status' => 0, 'message' => null, 'dataset' => null, 'error' => null, 'exception' => null, 'fileStatus' => null);
     // Se verifica si existe una sesión iniciada como administrador, de lo contrario se finaliza el script con un mensaje de error.
@@ -15,7 +15,7 @@ if (isset($_GET['action'])) {
         switch ($_GET['action']) {
                 // Leer detalles pedidos
             case 'readOne':
-                if (!$pedido->setId($_POST['idPedido'])) {
+                if (!$detalle->setId($_POST['idPedido'])) {
                     $result['error'] = 'Pedido incorrecto';
                 } elseif ($result['dataset'] = $pedido->readOne()) {
                     $result['status'] = 1;
