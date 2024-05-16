@@ -1,5 +1,5 @@
 // Constante para completar la ruta de la API.
-const CATEGORIA_API = 'services/admin/pedido.php';
+const VALORACION_API = 'services/admin/valoracion.php';
 // Constante para establecer el formulario de buscar.
 const SEARCH_FORM = document.getElementById('searchForm');
 // Constantes para establecer los elementos de la tabla.
@@ -41,11 +41,11 @@ SAVE_FORM.addEventListener('submit', async (event) => {
     // Se evita recargar la página web después de enviar el formulario.
     event.preventDefault();
     // Se verifica la acción a realizar.
-    (ID_CATEGORIA.value) ? action = 'updateRow' : action = 'createRow';
+    (ID_PEDIDO.value) ? action = 'updateRow' : action = 'createRow';
     // Constante tipo objeto con los datos del formulario.
     const FORM = new FormData(SAVE_FORM);
     // Petición para guardar los datos del formulario.
-    const DATA = await fetchData(CATEGORIA_API, action, FORM);
+    const DATA = await fetchData(VALORACION_API, action, FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se cierra la caja de diálogo.
@@ -79,7 +79,7 @@ const fillTable = async (form = null) => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             TABLE_BODY.innerHTML += `
                 <tr>
-                    <td>${row.nombre_categoria}</td>
+                    <td>${row.nombre_usuario}</td>
                     <td>${row.id_detalle}</td>
                     <td>${row.nombre_categoria}</td>
                     <td>${row.id_detalle}</td>
@@ -101,6 +101,21 @@ const fillTable = async (form = null) => {
     }
 }
 
+/*
+*   Función para preparar el formulario al momento de insertar un registro.
+*   Parámetros: ninguno.
+*   Retorno: ninguno.
+*/
+const openCreate = () => {
+    // Se muestra la caja de diálogo con su título.
+    SAVE_MODAL.show();
+    MODAL_TITLE.textContent = 'Crear cliente';
+    // Se prepara el formulario.
+    SAVE_FORM.reset();
+    CORREO_CLIENTE.disabled = false;
+    CLAVE_CLIENTE.disabled = false;
+    CONFIRMAR_CLAVE.disabled = false;
+}
 
 
 /*
@@ -123,7 +138,7 @@ const openUpdate = async (id) => {
         SAVE_FORM.reset();
         // Se inicializan los campos con los datos.
         const ROW = DATA.dataset;
-        ID_CATEGORIA.value = ROW.id_categoria;
+        ID_PEDIDO.value = ROW.id_categoria;
         NOMBRE_CATEGORIA.value = ROW.nombre_categoria;
         DESCRIPCION_CATEGORIA.value = ROW.descripcion_categoria;
     } else {
