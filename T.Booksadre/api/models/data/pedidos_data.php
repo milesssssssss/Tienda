@@ -1,6 +1,6 @@
 <?php
 // Se incluye la clase para validar los datos de entrada.
-require_once('../../helpers/validator.php');
+require_once('../../helpers/validator.php'); 
 // Se incluye la clase padre.
 require_once('../../models/handler/pedidos_handler.php');
 /*
@@ -9,7 +9,7 @@ require_once('../../models/handler/pedidos_handler.php');
 class PedidosData extends PedidosHandler
 {
     // Atributo genérico para manejo de errores.
- 
+
     private $data_error = null;
     private $filename = null;
      /*
@@ -21,11 +21,11 @@ class PedidosData extends PedidosHandler
             $this->id = $value;
             return true;
         } else {
-            $this->data_error = 'El identificador del cliente es incorrecto';
+            $this->data_error = 'El identificador del pedido es incorrecto';
             return false;
         }
     }
- 
+
     public function setEstado($value, $min = 2, $max = 50)
     {
         if (!Validator::validateAlphabetic($value)) {
@@ -39,27 +39,10 @@ class PedidosData extends PedidosHandler
             return false;
         }
     }
- 
-    public function setFilename()
-    {
-        if ($data = $this->readFilename()) {
-            $this->filename = $data['FOTO'];
-            return true;
-        } else {
-            $this->data_error = 'Imagen inexistente';
-            return false;
-        }
-    }
- 
+    
     // Método para obtener el error de los datos.
     public function getDataError()
     {
         return $this->data_error;
-    }
- 
-    public function getFilename()
-    {
-        return $this->filename;
-    }
-   
+    }
 }
