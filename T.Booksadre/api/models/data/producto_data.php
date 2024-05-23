@@ -62,7 +62,7 @@ class ProductoData extends ProductoHandler
             $this->precio = $value;
             return true;
         } else {
-            $this->data_error = 'El precio debe ser un número positivo';
+            $this->data_error = 'El precio debe ser un valor numérico';
             return false;
         }
     }
@@ -73,14 +73,14 @@ class ProductoData extends ProductoHandler
             $this->existencias = $value;
             return true;
         } else {
-            $this->data_error = 'Las existencias debe ser un número entero positivo';
+            $this->data_error = 'El valor de las existencias debe ser numérico entero';
             return false;
         }
     }
 
     public function setImagen($file, $filename = null)
     {
-        if (Validator::validateImageFile($file, 200)) {
+        if (Validator::validateImageFile($file, 1000)) {
             $this->imagen = Validator::getFileName();
             return true;
         } elseif (Validator::getFileError()) {
@@ -129,7 +129,7 @@ class ProductoData extends ProductoHandler
     }
 
     /*
-     *  Métodos para obtener el valor de los atributos adicionales.
+     *  Métodos para obtener los atributos adicionales.
      */
     public function getDataError()
     {

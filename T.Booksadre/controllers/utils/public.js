@@ -30,40 +30,26 @@ const loadTemplate = async () => {
             // Se agrega el encabezado de la página web antes del contenido principal.
             MAIN.insertAdjacentHTML('beforebegin', `
                 <header>
-                <!-- Menú -->
-                <nav class="navbar bg-body-tertiary fixed-top">
-                <div class="container-fluid">
-                    <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
-    
-                    <ul class="nav nav-underline position-absolute top-50 start-50 translate-middle">
-                        <li class="nav-item">
-                            <a class="nav-link-text" href="../../views/public/Index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link-text" href="#">Catálogo</a>
-                        </li>
-                    </ul>
-    
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                            <div class="search-box">
-                                <input type="text" class="form-control" placeholder="Buscar">
-                                <a class="nav-link" href="#" style="--i:1;"><i class='bx bx-search-alt-2'></i></a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="carrito.html" style="--i:2;"><i class='bx bxs-cart'></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="quienes_somos.html" style="--i:3;"><i class='bx bx-info-circle'></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html" style="--i:4;"><i class='bx bxs-user-circle'></i></a>
-                        </li>
-                    </ul>
+                <div class="menu ">
+                <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"><img src="../../resources/img/logo.png" height="50" alt="CoffeeShop"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </li>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ms-auto">
+                        <a class="nav-link" href="#" style="--i:1;"><i class='bx bx-search-alt-2'></i></a>
+                            <a class="nav-link" href="index.html"><i class="bi bi-shop"></i> Catálogo</a>
+                            <a class="nav-link" href="cart.html"><i class="bi bi-cart"></i> Carrito</a> 
+                            <a class="nav-link" href="#" onclick="logOut()"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a>
+                        </div>
+                    </div>
                 </div>
             </nav>
-                </header>
+            </nav>
+          </header>
             `);
         } else {
             location.href = 'index.html';
@@ -72,36 +58,22 @@ const loadTemplate = async () => {
         // Se agrega el encabezado de la página web antes del contenido principal.
         MAIN.insertAdjacentHTML('beforebegin', `
             <header>
-            <nav class="navbar bg-body-tertiary fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand"><img src="../../resources/img/logo.png" alt="Logo"></a>
-
-                <ul class="nav nav-underline position-absolute top-50 start-50 translate-middle">
-                    <li class="nav-item">
-                        <a class="nav-link-text" href="../../views/public/Index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-text" href="#">Catálogo</a>
-                    </li>
-                </ul>
-
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <div class="search-box">
-                            <input type="text" class="form-control" placeholder="Buscar">
-                            <a class="nav-link" href="#" style="--i:1;"><i class='bx bx-search-alt-2'></i></a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="carrito.html" style="--i:2;"><i class='bx bxs-cart'></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="quienes_somos.html" style="--i:3;"><i class='bx bx-info-circle'></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html" style="--i:4;"><i class='bx bxs-user-circle'></i></a>
-                    </li>
-                </ul>
+            
+            <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="../../resources/img/logo.png" height="50" alt="CoffeeShop"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <li class="nav-item">
+        
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto text-end">
+                <a class="nav-link" href="index.html"><i class="bi bi-shop"></i> Catálogo</a>
+               <a class="nav-link" href="cart.html"><i class="bi bi-cart"></i> Carrito</a>
+               <a class="nav-link" href="login.html"><i class="bi bi-box-arrow-right"></i> Iniciar sesión</a>
+        </div>
+         </div>
             </div>
         </nav>
             </header>
