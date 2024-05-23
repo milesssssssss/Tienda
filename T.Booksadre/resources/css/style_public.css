@@ -274,6 +274,7 @@ button:hover {
 .navbar-nav.custom-nav .nav-item {
     margin-left: 15px;
     margin-right: 15px;
+    justify-content: center;
 }
 
 .custom-nav-link {
@@ -283,6 +284,10 @@ button:hover {
 
 .custom-nav-link:hover {
     color: gray; /* Color al pasar el cursor */
+}
+
+.textos {
+    text-align: center;
 }
 
 
