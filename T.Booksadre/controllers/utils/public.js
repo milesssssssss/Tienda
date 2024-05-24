@@ -89,9 +89,9 @@ const loadTemplate = async () => {
           <div class="columna text-center">
             <a class="nav-link-text">SIGUENOS</a>
             <br><br>
-            <a href="https://web.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
-            <a href="https://www.instagram.com/booksadre/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.google.com/intl/es/gmail/about/"><i class='bx bxl-gmail'></i></a>
+            <a href="https://web.whatsapp.com/" class="icon"><i class='bx bxl-whatsapp'></i></a>
+            <a href="https://www.instagram.com/booksadre/" class="icon"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.google.com/intl/es/gmail/about/" class="icon"><i class='bx bxl-gmail'></i></a>
             <br><br>
           </div>
         </div>

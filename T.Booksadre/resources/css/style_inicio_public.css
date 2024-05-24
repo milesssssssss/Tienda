@@ -134,3 +134,7 @@ footer {
 .navbar-nav {
     margin-left: auto; /* Asegura que el contenido se alinee a la derecha */
 }
+
+.icon i {
+    color: white;
+}
