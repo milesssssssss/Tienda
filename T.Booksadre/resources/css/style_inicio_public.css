@@ -138,3 +138,44 @@ footer {
 .icon i {
     color: white;
 }
+
+
+
+
+/* styles.css */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 9999;
+  }
+  
+  .cookie-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #accept-cookies-btn {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #accept-cookies-btn:hover {
+    background-color: #ddd;
+  }
+  
