@@ -69,8 +69,8 @@
                             <input type="number" class="d-none" id="idDetalle" name="idDetalle">
                             <div class="col-sm-12">
                                 <label for="cantidadProducto" class="form-label">Cantidad</label>
-                                <input id="cantidadProducto" type="number" name="cantidadProducto" min="1" class="form-control"
-                                    required>
+                                <input id="cantidadProducto" type="number" name="cantidadProducto" min="1"
+                                    class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -80,35 +80,69 @@
                 </div>
             </div>
         </div>
+
+
         <div class="contenedor">
             <h2>Formas de Pago</h2>
-            <div class="opciones-pago">
-                <!-- Opciones de pago aceptadas -->
-                <span>Aceptamos estas opciones de pago</span>
-                <div class="imagenes-pago">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="American Express">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+            <div class="card-deck">
+                <div class="card text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Visa</h5>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">MasterCard</h5>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="American Express" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">American Express</h5>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">PayPal</h5>
+                    </div>
                 </div>
             </div>
-            <div class="opciones-envio">
-                <!-- Opciones de entrega -->
-                <div class="opcion-envio">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Shopping_cart_font_awesome.svg" alt="Retiro en tienda">
-                    <span>Retiro en tienda 2hrs</span>
+    
+            <h2>Opciones de Envío</h2>
+            <div class="card-deck">
+                <div class="card text-center">
+                    <img src="../../resources/img/icono-retiro-en-tienda.png" alt="Retiro en tienda" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Retiro en tienda</h5>
+                        <p class="card-text">Retiro en tienda 2hrs</p>
+                    </div>
                 </div>
-                <div class="opcion-envio">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Truck_font_awesome.svg" alt="Flash Delivery">
-                    <span>Flash Delivery: Entrega el mismo día para pedidos realizados antes de las 2:00 pm. Aplica para compras en San Salvador</span>
+                <div class="card text-center">
+                    <img src="../../resources/img/envio_icono.png" alt="Flash Delivery" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Flash Delivery</h5>
+                        <p class="card-text">Entrega el mismo día para pedidos realizados antes de las 2:00 pm. Aplica para compras en El Salvador</p>
+                    </div>
                 </div>
-                <div class="opcion-envio">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Truck_font_awesome.svg" alt="Envío a domicilio">
-                    <span>Envío a domicilio (estándar) 3-5 días hábiles</span>
+                <div class="card text-center">
+                    <img src="../../resources/img/envios_ya.png" alt="Envío a domicilio" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Envío a domicilio</h5>
+                        <p class="card-text">Envío a domicilio (estándar) 3-5 días hábiles</p>
+                    </div>
                 </div>
             </div>
         </div>
+    
     </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
     <!-- Llamada al framework y librería de mensajes -->
     <script type="text/javascript" src="../../resources/js/bootstrap.bundle.min.js"></script>
