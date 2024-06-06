@@ -46,16 +46,13 @@ const loadTemplate = async () => {
                       <div class="offcanvas-body">
                         <div class="circle-container">
                           <div class="circle">
-                            <img src="https://editorial.uefa.com/resources/0250-0e9736e28005-0dd98a9ef3de-1000/cristiano_ronaldo_real_madrid_.jpeg" alt="Imagen en un círculo">
+                            <img src="https://i.scdn.co/image/ab67616d00001e02cfeae645958e9248abff0710" alt="Imagen en un círculo">
                           </div>
               
                         </div>          
               
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                           
-                          <div class="Editar">
-                            <button> Editar perfil </button>
-                          </div>
               
                           <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="../../views/admin/Inicio.html"><i class='bx bxs-home-alt-2' ></i> Inicio</a>
@@ -67,20 +64,14 @@ const loadTemplate = async () => {
                             <a class="nav-link" ria-current="page" href="../../views/admin/Productos.html"><i class='bx bxs-pie-chart-alt-2'></i> Productos</a>
                           </li>
                           <li class="nav-item ">
-                            <a class="nav-link active" aria-current="page" href="../../views/admin/Pedidos.html"><i class='bx bxs-report'></i> Pedidos</a>
-                          </li>
+                          <a class="nav-link active" aria-current="page" href="../../views/admin/Pedidos.html"><i class='bx bxs-report'></i> Pedidos</a>
+                        </li>
                           <li class="nav-item">
                             <a class="nav-link" href="../../views/admin/Clientes.html"><i class='bx bxs-user'></i> Clientes</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="../../views/admin/Administrador.html"><i class='bx bxs-user-plus' ></i> Administradores</a>
                           </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="../../views/admin/valoracion.html"><i class='bx bxs-message-rounded-dots' ></i> Reseñas</a>
-                          </li> 
-                          <li class="nav-item">
-                          <a class="nav-link" href="../../views/admin/detalle_pedido.html"><i class='bx bx-detail'  ></i> detalle pedido</a>
-                        </li>
                           <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Cuenta: <b>${DATA.username}</b></a>
                               <ul class="dropdown-menu">
