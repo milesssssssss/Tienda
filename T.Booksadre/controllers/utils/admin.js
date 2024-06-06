@@ -46,7 +46,7 @@ const loadTemplate = async () => {
                       <div class="offcanvas-body">
                         <div class="circle-container">
                           <div class="circle">
-                            <img src="https://i.scdn.co/image/ab67616d00001e02cfeae645958e9248abff0710" alt="Imagen en un círculo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1200px-User_icon_2.svg.png" alt="Imagen en un círculo">
                           </div>
               
                         </div>          

@@ -178,4 +178,21 @@ footer {
   #accept-cookies-btn:hover {
     background-color: #ddd;
   }
-  
+
+
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metodos-pago {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.metodos-pago li {
+    margin: 10px;
+}
