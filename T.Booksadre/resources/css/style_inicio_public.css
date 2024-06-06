@@ -389,3 +389,18 @@ footer {
           .misionestilos{
             background-color: #415a77;
           }
+
+
+
+          /*otro estilos de cambiar de color*/
+
+          .bg-primary-light {
+            background-color: #0b1f4bc2;
+        }
+        .bg-secondary-light {
+            background-color: #567c8e;
+        }
+
+        .bg-dark-light {
+            background-color: #002030;
+        }
