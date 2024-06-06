@@ -55,6 +55,64 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <h1>Comentarios al Estilo Facebook</h1>
+            <div class="row">
+                <div class="col-md-8">
+                    <!-- Lista de comentarios -->
+                    <div class="card">
+                        <div class="card-header">Comentarios</div>
+                        <div class="card-body">
+                            <!-- Aquí puedes agregar los comentarios -->
+                            <div class="media">
+                                <img src="avatar.jpg" class="mr-3" alt="Avatar">
+                                <div class="media-body">
+                                    <h5 class="mt-0">Juan Pérez</h5>
+                                    ¡Excelente producto! Me encanta.
+                                    <div class="rating">
+                                        <!-- Estrellas para calificar -->
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ...otros comentarios... -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!-- Formulario para agregar comentarios -->
+                    <div class="card">
+                        <div class="card-header">Agregar Comentario</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="comentario" class="form-label">Comentario:</label>
+                                    <textarea class="form-control" id="comentario" rows="3"
+                                        placeholder="Escribe tu comentario"></textarea>
+                                </div>
+                                <!-- Mover la sección de calificación arriba del botón -->
+                                <div class="rating">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
     <!-- Llamada al framework y librería de mensajes -->
