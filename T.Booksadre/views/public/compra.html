@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -63,104 +63,43 @@
     <br>
     <br>
     <br>
-    <h1 class="text-center">Entrega</h1>
+    <h1 class="text-start">Entrega</h1>
 
-    <br>
-    <br>
+    <br><br><br>
 
-    <div style="margin: 0 auto; width: fit-content;">
-        <div class="input-group">
-            <div class="section">
-                <label for="name"
-                    style="display: inline-block; text-align: right; vertical-align: middle; width: 80px; margin-right: 10px;">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="section">
-                <label for="apellido"
-                    style="display: inline-block; text-align: right; vertical-align: middle; width: 80px; margin-right: 10px;">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
-            </div>
-        </div>
-
-        <div class="input-group">
-            <div class="section">
-                <label for="address"
-                    style="display: inline-block; text-align: right; vertical-align: middle; width: 80px; margin-right: 10px;">Dirección:</label>
-                <input type="text" id="address" name="address">
-            </div>
-            <div class="section">
-                <label for="apartment"
-                    style="display: inline-block; text-align: right; vertical-align: middle; width: 80px; margin-right: 10px;">Casa:</label>
-                <input type="text" id="apartment" name="apartment" />
-            </div>
-        </div>
-
-        <div class="input-group">
-            <div class="section">
-                <label for="city"
-                    style="display: inline-block; text-align: right; vertical-align: middle; width: 80px; margin-right: 10px;">Ciudad:</label>
-                <input type="text" id="city" name="city" />
-            </div>
-            <div class="section">
-                <label for="region"
-                    style="display: inline-block; text-align: right; vertical-align: middle; width: 80px; margin-right: 10px;">Región:</label>
-                <input type="text" id="region" name="region" />
-            </div>
-        </div>
-
-        <div class="input-group">
-            <div class="section">
-                <label for="zipcode"
-                    style="display: inline-block; text-align: right; vertical-align: middle; width: 80px; margin-right: 10px;">Código:</label>
-                <input type="text" id="zipcode" name="zipcode" />
-            </div>
-            <div class="section">
-                <label for="phone"
-                    style="display: inline-block; text-align: right; vertical-align: middle; width: 80px; margin-right: 10px;">Teléfono:</label>
-                <input type="text" id="phone" name="phone" />
-            </div>
-        </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <div style="margin: 0 auto; width: fit-content;">
-            <div class="form-container">
-                <img src="../../resources/img/lapiz.png" alt="Imagen" style="display: block; margin-bottom: 20px;">
-
-                <div class="input-group" style="text-align: center;">
-                    <div class="right-section">
-                        <div class="section">
-                            <label for="itemName">Lápiz PIC:</label>
-                            <input id="itemName" name="itemName" value="$1.25" readonly />
-                        </div>
-                        <div class="section">
-                            <label for="subtotal">Subtotal:</label>
-                            <input id="subtotal" name="subtotal" value="$1.25" readonly />
-                        </div>
-                        <div class="small-section">
-                            <label for="shipping">Cobro de envío:</label>
-                            <input id="shipping" name="shipping" value="$2.95" readonly />
-                        </div>
-                        <div class="total">
-                            <div class="total-label">
-                                <div>Total:</div>
-                                <label for="shipping">$4.20</label>
-                            </div>
-                        </div>
-                    </div>
+    <div class="container">
+        <div class="flex-shrink-0 p-3" style="width: 280px;">
+            <a>
+              Collapsible
+            </a>
+            <br><br>
+            <ul class="list-unstyled ps-0">
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                  Formas de pago
+                </button>
+                <div class="collapse show" id="home-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
+                  </ul>
                 </div>
-            </div>
-        </div>
-
-    </div>
-    </div>
-
-
-
-
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                  Dashboard
+                </button>
+                <div class="collapse" id="dashboard-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>
+                  </ul>
+                </div>
+              </li>
+          </div>
     </div>
 
     <br><br><br><br><br><br> <br>
