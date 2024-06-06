@@ -33,7 +33,7 @@ const loadTemplate = async () => {
                 <div class="menu ">
                 <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html"><img src="../../resources/img/logo.png" height="50" alt="CoffeeShop"></a>
+                    <a class="navbar-brand" href="index.html"><img src="../../resources/img/logo.png" height="50" alt="Booksadre"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -61,7 +61,7 @@ const loadTemplate = async () => {
             
             <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="../../resources/img/logo.png" height="50" alt="CoffeeShop"></a>
+                <a class="navbar-brand" href="index.html"><img src="../../resources/img/logo.png" height="50" alt="Booksadre"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

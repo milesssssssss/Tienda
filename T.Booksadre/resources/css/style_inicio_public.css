@@ -196,3 +196,50 @@ footer {
 .metodos-pago li {
     margin: 10px;
 }
+
+.contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.opciones-pago {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.opciones-pago span {
+    margin-right: 10px;
+}
+
+.imagenes-pago {
+    display: flex;
+}
+
+.imagenes-pago img {
+    height: 40px;
+    margin-left: 10px;
+}
+
+.opciones-envio {
+    margin-bottom: 20px;
+}
+
+.opcion-envio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.opcion-envio img {
+    height: 40px;
+    margin-right: 10px;
+}
