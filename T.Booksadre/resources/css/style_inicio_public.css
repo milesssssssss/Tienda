@@ -412,13 +412,7 @@ h2 {
     background-color: #002030;
 }
 
-
-
-
-
-
-
-
+/*estilos de estrellas*/
 
 .clasificacion input[type='radio'] {
     opacity: 0;
@@ -434,3 +428,48 @@ h2 {
    .activo + label{
    color: rgb(255, 230, 0) !important;
    }
+
+   /*estilos de formas de pago*/
+
+   .contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card::before {
+    content: attr(data-description);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
