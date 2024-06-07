@@ -98,13 +98,18 @@
                                         placeholder="Escribe tu comentario"></textarea>
                                 </div>
                                 <!-- Mover la sección de calificación arriba del botón -->
-                                <div class="rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                </div>
+                                <p class="clasificacion">
+                                    <input id="radio1" type="radio" name="estrellas" value="1">
+                                    <label for="radio1">★</label>
+                                    <input id="radio2" type="radio" name="estrellas" value="2">
+                                    <label for="radio2">★</label>
+                                    <input id="radio3" type="radio" name="estrellas" value="3">
+                                    <label for="radio3">★</label>
+                                    <input id="radio4" type="radio" name="estrellas" value="4">
+                                    <label for="radio4">★</label>
+                                    <input id="radio5" type="radio" name="estrellas" value="5">
+                                    <label for="radio5">★</label>
+                                  </p>
                                 <button type="submit" class="btn btn-primary">Enviar</button>
                             </form>
                         </div>
@@ -124,6 +129,10 @@
     <script type="text/javascript" src="../../controllers/utils/public.js"></script>
     <!-- Llamada al controlador de la página web -->
     <script type="text/javascript" src="../../controllers/public/detail.js"></script>
+    <!-- Estrellas-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--Estrellas js-->
+    <script type="text/javascript" src="../../controllers/public/estrellas.js"></script>
 </body>
 
 </html>
