@@ -110,7 +110,6 @@ const loadTemplate = async () => {
           <ul class="list-unstyled">
             <li><a class="text-decoration-none text-white" href="login.html">Mi cuenta</a></li>
             <li><a class="text-decoration-none text-white" href="signup.html">Registrarme</a></li>
-            <li><a class="text-decoration-none text-white" href="recuperar_contraseñas.html">Recuperar clave</a></li>
             <li><a class="text-decoration-none text-white" href="como_comprar.html">¿Cómo comprar en línea?</a></li>
           </ul>
         </div>
