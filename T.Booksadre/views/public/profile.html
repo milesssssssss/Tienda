@@ -42,18 +42,24 @@
                 <label for="correoCliente" class="form-label">Correo</label>
                 <input id="correoCliente" type="email" name="correoCliente" class="form-control" required>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 offset-lg-2">
-                <label for="nombreCliente" class="form-label">Dui</label>
-                <input id="nombreCliente" type="text" name="nombreCliente" class="form-control" required>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <label for="duiCliente" class="form-label">dui</label>
+                <input type="text" id="duiCliente" name="duiCliente" placeholder="00000000-0" class="form-control" required>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4 offset-lg-2">
-                <label for="nombreCliente" class="form-label">telefono</label>
-                <input id="nombreCliente" type="text" name="nombreCliente" class="form-control" required>
+                <label for="telefonoCliente" class="form-label">telefono</label>
+                <input id="telefonoCliente" type="text" name="telefonoCliente" class="form-control" required>
             </div>
-          <div class="col-sm-12 col-md-6 col-lg-4 offset-lg-2">
-                <label for="nombreCliente" class="form-label">nacimiento</label>
-                <iput id="nombreCliente" type="text" name="nombreCliente" class="form-control" required>
-            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <label for="nacimientoCliente" class="form-label">nacimiento</label>
+                <input type="date" id="nacimientoCliente" name="nacimientoCliente" class="form-control" required>
+            </div> 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
             </div>
@@ -113,7 +119,7 @@
     <!-- Llamada al controlador del sitio privado -->
     <script type="text/javascript" src="../../controllers/utils/public.js"></script>
     <!-- Llamada al controlador de la página web -->
-    <script type="text/javascript" src="../../controllers/public/perfil.js"></script>
+    <script type="text/javascript" src="../../controllers/public/profile.js"></script>
 </body>
 
 </html>

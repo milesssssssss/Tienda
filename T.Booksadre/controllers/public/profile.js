@@ -1,11 +1,11 @@
 // Constantes para establecer los elementos del formulario de editar perfil.
 const PROFILE_FORM = document.getElementById('profileForm'),
-    NOMBRE_CLIENTE = document.getElementById('nombreCliente'),
-    APELLIDO_CLIENTE = document.getElementById('apellidoCliente'),
-    CORREO_CLIENTE = document.getElementById('correoCliente'),
-    DUI_CLIENTE = document.getElementById('duiCliente'),
-    TELEFONO_CLIENTE = document.getElementById('telefonoCliente'),
-    NACIMIENTO_CLIENTE = document.getElementById('nacimientoCliente');
+NOMBRE_CLIENTE = document.getElementById('nombreCliente'),
+APELLIDO_CLIENTE = document.getElementById('apellidoCliente'),
+CORREO_CLIENTE = document.getElementById('correoCliente'),
+TELEFONO_CLIENTE = document.getElementById('telefonoCliente'),
+DUI_CLIENTE = document.getElementById('duiCliente'),
+NACIMIENTO_CLIENTE = document.getElementById('nacimientoCliente');
     
 // Constante para establecer la modal de cambiar contraseña.
 const PASSWORD_MODAL = new bootstrap.Modal('#passwordModal');
@@ -25,8 +25,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Se inicializan los campos del formulario con los datos del usuario que ha iniciado sesión.
         const ROW = DATA.dataset;
         NOMBRE_CLIENTE.value = ROW.nombre_cliente;
-        APELLIDO_CLIENTE.value = ROW.apellido_administrador;
-        CORREO_CLIENTE.value = ROW.apellido_cliente;
+        APELLIDO_CLIENTE.value = ROW.apellido_cliente;
+        CORREO_CLIENTE.value = ROW.correo_cliente;
+        TELEFONO_CLIENTE.value = ROW.telefono_cliente;
+        DUI_CLIENTE.value = ROW.dui_cliente;
+        NACIMIENTO_CLIENTE.value = ROW.nacimiento_cliente;
     } else {
         sweetAlert(2, DATA.error, null);
     }

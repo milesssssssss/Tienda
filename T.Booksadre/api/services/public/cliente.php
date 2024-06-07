@@ -92,9 +92,43 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'La cuenta ha sido desactivada';
                 }
                 break;
+                    case 'editProfile':
+                        $_POST = Validator::validateForm($_POST);
+                        if (
+                            !$administrador->setNombre($_POST['nombreAdministrador']) or
+                            !$administrador->setApellido($_POST['apellidoAdministrador']) or
+                            !$administrador->setCorreo($_POST['correoAdministrador']) or
+                            !$administrador->setAlias($_POST['aliasAdministrador'])
+                        ) {
+                            $result['error'] = $administrador->getDataError();
+                        } elseif ($administrador->editProfile()) {
+                            $result['status'] = 1;
+                            $result['message'] = 'Perfil modificado correctamente';
+                            $_SESSION['aliasAdministrador'] = $_POST['aliasAdministrador'];
+                        } else {
+                            $result['error'] = 'Ocurrió un problema al modificar el perfil';
+                        }
+                        break;
+                    case 'changePassword':
+                        $_POST = Validator::validateForm($_POST);
+                        if (!$administrador->checkPassword($_POST['claveActual'])) {
+                            $result['error'] = 'Contraseña actual incorrecta';
+                        } elseif ($_POST['claveNueva'] != $_POST['confirmarClave']) {
+                            $result['error'] = 'Confirmación de contraseña diferente';
+                        } elseif (!$administrador->setClave($_POST['claveNueva'])) {
+                            $result['error'] = $administrador->getDataError();
+                        } elseif ($administrador->changePassword()) {
+                            $result['status'] = 1;
+                            $result['message'] = 'Contraseña cambiada correctamente';
+                        } else {
+                            $result['error'] = 'Ocurrió un problema al cambiar la contraseña';
+                        }
+                        break;
+                
             default:
                 $result['error'] = 'Acción no disponible fuera de la sesión';
         }
+        
     }
     // Se obtiene la excepción del servidor de base de datos por si ocurrió un problema.
     $result['exception'] = Database::getException();

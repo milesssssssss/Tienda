@@ -40,10 +40,9 @@ const loadTemplate = async () => {
                 </li>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ms-auto">
-                        <a class="nav-link" href="#" style="--i:1;"><i class='bx bx-search-alt-2'></i></a>
                             <a class="nav-link" href="index.html"><i class="bi bi-shop"></i> Catálogo</a>
                             <a class="nav-link" href="cart.html"><i class="bi bi-cart"></i> Carrito</a> 
-                            <a class="nav-link" href="perfil.html"><i class="bi bi-person"></i> Perfil</a> 
+                            <a class="nav-link" href="profile.html"><i class="bi bi-person"></i> Perfil</a> 
                             <a class="nav-link" href="#" onclick="logOut()"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a>
                         </div>
                     </div>
