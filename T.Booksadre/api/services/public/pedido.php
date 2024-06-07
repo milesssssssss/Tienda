@@ -57,6 +57,47 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al modificar la cantidad';
                 }
                 break;
+                // Acción para agregar un producto al carrito de compras.
+            case 'insertarDetalle':
+                $_POST = Validator::validateForm($_POST);
+                if (
+                    !$pedido->setProducto($_POST['idProducto']) or
+                    !$pedido->setCantidad($_POST['cantidadProducto'])
+                ) {
+                    $result['error'] = $pedido->getDataError();
+                } elseif ($pedido->manipulateDetail()) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Producto agregado correctamente';
+                } else {
+                    $result['error'] = 'Ocurrió un problema al agregar el producto';
+                }
+                break;
+                // Acción para actualizar la cantidad de un producto en el carrito de compras.
+            case 'actualizarDetalle':
+                $_POST = Validator::validateForm($_POST);
+                if (
+                    !$pedido->setIdDetalle($_POST['idDetalle']) or
+                    !$pedido->setCantidad($_POST['cantidadProducto'])
+                ) {
+                    $result['error'] = $pedido->getDataError();
+                } elseif ($pedido->actualizarDetalle()) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Cantidad modificada correctamente';
+                } else {
+                    $result['error'] = 'Ocurrió un problema al modificar la cantidad';
+                }
+                break;
+                // Acción para remover un producto del carrito de compras.
+                case 'eliminarDetalle':
+                    if (!$pedido->setIdDetalle($_POST['idDetalle'])) {
+                        $result['error'] = $pedido->getDataError();
+                    } elseif ($pedido->deleteDetail()) {
+                        $result['status'] = 1;
+                        $result['message'] = 'Producto removido correctamente';
+                    } else {
+                        $result['error'] = 'Ocurrió un problema al remover el producto';
+                    }
+                    break;
             // Acción para remover un producto del carrito de compras.
             case 'deleteDetail':
                 if (!$pedido->setIdDetalle($_POST['idDetalle'])) {

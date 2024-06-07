@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Petición para obtener las categorías disponibles.
     const DATA = await fetchData(CATEGORIA_API, 'readAll');
     // Llamada a la función para llenar la tabla con los registros existentes.
-    fillTable();
+
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se inicializa el contenedor de categorías.

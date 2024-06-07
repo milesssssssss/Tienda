@@ -98,8 +98,8 @@ class PedidoHandler
     public function updateDetail()
     {
         $sql = 'UPDATE detalle_pedido
-                SET cantidad_producto = ?
-                WHERE id_detalle = ? AND id_pedido = ?';
+        SET cantidad_producto = ?
+        WHERE id_detalle = ? AND id_pedido = ?';
         $params = array($this->cantidad, $this->id_detalle, $_SESSION['idPedido']);
         return Database::executeRow($sql, $params);
     }
@@ -112,4 +112,30 @@ class PedidoHandler
         $params = array($this->id_detalle, $_SESSION['idPedido']);
         return Database::executeRow($sql, $params);
     }
+
+    // Método en procedimiento, para manipular el detalle de pedido y simplificar el paso a paso
+    public function manipulateDetail()
+    {
+        // Se realiza una subconsulta para obtener el precio del producto.
+        $sql = 'CALL insertar_orden_validado(?, ?, ?)';
+        $params = array($_SESSION['idCliente'], $this->cantidad, $this->producto);
+        return Database::executeRow($sql, $params);
+    }
+    
+// Método para actualizar la cantidad de un producto agregado al carrito de compras.
+public function actualizarDetalle()
+{
+    $sql = 'CALL actualizar_orden_validado(?,?,?)';
+    $params = array($this->cantidad, $this->id_detalle, $_SESSION['idCliente']);
+    return Database::executeRow($sql, $params);
+}
+
+ // Método para eliminar un producto que se encuentra en el carrito de compras.
+ public function eliminarDetalle()
+ {
+     $sql = 'CALL eliminar_orden_validado(?,?)';
+     $params = array($this->id_detalle, $_SESSION['idCliente']);
+     return Database::executeRow($sql, $params);
+ }
+
 }
