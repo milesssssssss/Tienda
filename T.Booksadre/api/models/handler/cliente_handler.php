@@ -63,9 +63,9 @@ class ClienteHandler
     public function editProfile()
     {
         $sql = 'UPDATE cliente
-                SET nombre_cliente = ?, apellido_cliente = ?, correo_cliente = ?, dui_cliente = ?, telefono_cliente = ?, nacimiento_cliente = ?, direccion_cliente = ?
+                SET nombre_cliente = ?, apellido_cliente = ?, correo_cliente = ?, dui_cliente = ?, telefono_cliente = ?, nacimiento_cliente = ?
                 WHERE id_cliente = ?';
-        $params = array($this->nombre, $this->apellido, $this->correo, $this->dui, $this->telefono, $this->nacimiento, $this->direccion, $this->id);
+        $params = array($this->nombre, $this->apellido, $this->correo, $this->dui, $this->telefono, $this->nacimiento, $_SESSION['idCliente']);
         return Database::executeRow($sql, $params);
     }
 
@@ -77,6 +77,7 @@ class ClienteHandler
         $params = array($this->estado, $this->id);
         return Database::executeRow($sql, $params);
     }
+    
 
     /*
     *   Métodos para realizar las operaciones SCRUD (search, create, read, update, and delete).
