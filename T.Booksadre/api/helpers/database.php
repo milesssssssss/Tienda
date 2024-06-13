@@ -99,11 +99,14 @@ class Database
             case '42S02':
                 self::$error;
                 break;
+            case '45000':
+                self::$error;
+                break;
             case '42S22':
                 self::$error = 'Columna no encontrada';
                 break;
             case '23000':
-                self::$error = 'Violación de restricción de integridad';
+                self::$error;
                 break;
             default:
                 self::$error = 'Ocurrió un problema en la base de datos';
