@@ -79,7 +79,7 @@ if (isset($_GET['action'])) {
         switch ($_GET['action']) {
             case 'signUp':
                 $_POST = Validator::validateForm($_POST);
-                // Se establece la clave secreta para el reCAPTCHA de acuerdo con la cuenta de Google.
+                /* Se establece la clave secreta para el reCAPTCHA de acuerdo con la cuenta de Google.
                 $secretKey = '6LdBzLQUAAAAAL6oP4xpgMao-SmEkmRCpoLBLri-';
                 // Se establece la dirección IP del servidor.
                 $ip = $_SERVER['REMOTE_ADDR'];
@@ -98,8 +98,8 @@ if (isset($_GET['action'])) {
 
                 if (!$captcha['success']) {
                     $result['recaptcha'] = 1;
-                    $result['error'] = 'No eres humano';
-                } elseif (!isset($_POST['condicion'])) {
+                    $result['error'] = 'No eres humano';*/
+                if (!isset($_POST['condicion'])) {
                     $result['error'] = 'Debe marcar la aceptación de términos y condiciones';
                 } elseif (
                     !$cliente->setNombre($_POST['nombreCliente']) or
