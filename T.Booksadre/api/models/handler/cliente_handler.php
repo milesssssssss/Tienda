@@ -78,6 +78,15 @@ class ClienteHandler
         return Database::executeRow($sql, $params);
     }
     
+    public function readOneCorreo($correo)
+{
+    $sql = 'SELECT id_cliente, nombre_cliente, apellido_cliente, correo_cliente, dui_cliente, telefono_cliente, nacimiento_cliente, direccion_cliente, estado_cliente
+            FROM cliente
+            WHERE correo_cliente = ?';
+    $params = array($correo);
+    return Database::getRow($sql, $params);
+}
+
 
     /*
     *   Métodos para realizar las operaciones SCRUD (search, create, read, update, and delete).
