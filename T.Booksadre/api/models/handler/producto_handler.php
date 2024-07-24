@@ -36,6 +36,23 @@ class ProductoHandler
         return Database::getRows($sql, $params);
     }
 
+
+    public function getCategoria()
+    {
+        $this->estado = 'Pendiente';
+        $sql = 'SELECT id_pedido
+                FROM pedido
+                WHERE estado_pedido = ? AND id_cliente = ?';
+        $params = array($_SESSION['idCliente']);
+        if ($data = Database::getRow($sql, $params)) {
+            $_SESSION['idPedido'] = $data['id_pedido'];
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public function createRow()
     {
         $sql = 'INSERT INTO producto(nombre_producto, descripcion_producto, precio_producto, existencias_producto, imagen_producto, estado_producto, id_categoria, id_administrador)
@@ -80,14 +97,16 @@ class ProductoHandler
         return Database::executeRow($sql, $params);
     }
 
-    public function deleteRow()
-    {
-        $sql = 'DELETE FROM producto
-                WHERE id_producto = ?';
-        $params = array($this->id);
-        return Database::executeRow($sql, $params);
-    }
 
+    public function getCommentsAndRatings()
+    {
+        $sql = 'SELECT v.id_valoracion, v.id_producto, v.id_cliente, v.calificacion, v.comentario, v.fecha_valoracion, c.nombre_cliente, c.apellido_cliente
+        FROM valoracion v
+        JOIN cliente c ON v.id_cliente = c.id_cliente 
+        WHERE v.id_producto = ? AND v.estado_valoracion = true';
+        $params = array($this->id);
+        return Database::getRows($sql, $params);
+    }
     public function readProductosCategoria()
     {
         $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
