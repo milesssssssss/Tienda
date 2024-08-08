@@ -69,6 +69,17 @@ class ProductoHandler
                 ORDER BY nombre_producto';
         return Database::getRows($sql);
     }
+    /*nuevo*/
+    public function graficnew()
+    {
+        $sql = 'SELECT categoria.nombre_categoria, COUNT(producto.id_producto) as estado_producto
+        FROM producto 
+        JOIN categoria ON producto.id_categoria = categoria.id_categoria 
+        GROUP BY categoria.nombre_categoria';
+        return Database::getRows($sql);
+    }
+    
+
 
     public function readOne()
     {
@@ -88,6 +99,7 @@ class ProductoHandler
         return Database::getRow($sql, $params);
     }
 
+
     public function updateRow()
     {
         $sql = 'UPDATE producto
@@ -98,6 +110,8 @@ class ProductoHandler
     }
 
 
+    
+    
     public function getCommentsAndRatings()
     {
         $sql = 'SELECT v.id_valoracion, v.id_producto, v.id_cliente, v.calificacion, v.comentario, v.fecha_valoracion, c.nombre_cliente, c.apellido_cliente
@@ -118,6 +132,14 @@ class ProductoHandler
         return Database::getRows($sql, $params);
     }
 
+
+public function deleteRow()
+{
+    $sql = 'DELETE FROM producto
+            WHERE id_producto = ?';
+    $params = array($this->id);
+    return Database::executeRow($sql, $params);
+}
     /*
     *   Métodos para generar gráficos.
     */
@@ -139,6 +161,8 @@ class ProductoHandler
         return Database::getRows($sql);
     }
 
+
+    
     /*
     *   Métodos para generar reportes.
     */
